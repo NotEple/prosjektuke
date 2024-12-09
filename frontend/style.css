@@ -1,0 +1,15 @@
+body {
+  font-family: Montserrat, sans-serif;
+}
+
+#home-page {
+  background-image: url("./images/bg-home.jpg");
+}
+
+#individual-form {
+  background-image: url("./images/bg-individual.jpg");
+}
+
+#family-form {
+  background-image: url("./images/bg.family.jpg");
+}
