@@ -22,5 +22,94 @@
     <link rel="stylesheet" href="../style.css" />
     <title>Individual</title>
   </head>
-  <body id="individual-form"></body>
+  <body id="individual-form">
+    <form action="#" method="post">
+      <h2>
+        Share a few details about yourself so we can find the best match for
+        you!
+      </h2>
+
+      <label for="name">Your Name</label>
+      <input
+        type="text"
+        id="name"
+        name="name"
+        placeholder="What's your name?"
+        required
+      />
+
+      <label for="status">Your Status</label>
+      <textarea
+        id="status"
+        name="status"
+        placeholder="Share your situation (e.g., single parent, elderly, or other)"
+        rows="3"
+        required
+      ></textarea>
+
+      <label for="location">Your Location</label>
+      <input
+        type="text"
+        id="location"
+        name="location"
+        placeholder="Where are you located?"
+        required
+      />
+
+      <label for="email">E-mail Address</label>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        placeholder="What's your email address?"
+        required
+      />
+
+      <label for="languages">Languages</label>
+      <input
+        type="text"
+        id="languages"
+        name="languages"
+        placeholder="What languages do you speak?"
+        required
+      />
+
+      <label for="experience">What Are You Looking For</label>
+      <textarea
+        id="experience"
+        name="experience"
+        placeholder="Describe the kind of family environment experience you are hoping for."
+        rows="4"
+        required
+      ></textarea>
+
+      <label for="specialRequests">Special Requests</label>
+      <textarea
+        id="specialRequests"
+        name="specialRequests"
+        placeholder="Is there anything the family should know? (e.g., 'I have a nut allergy', 'I mostly eat vegan food')"
+        rows="3"
+      ></textarea>
+
+      <fieldset>
+        <legend>Your Preferences</legend>
+        <label
+          ><input type="checkbox" name="pet" value="yes" /> I have a pet</label
+        ><br />
+        <label
+          ><input type="checkbox" name="smoking" value="yes" /> I am
+          smoking</label
+        ><br />
+        <label
+          ><input type="checkbox" name="vegan" value="yes" /> I am vegan</label
+        ><br />
+        <label
+          ><input type="checkbox" name="overnightStay" value="yes" /> I would
+          like to stay over</label
+        >
+      </fieldset>
+
+      <button type="submit">Search</button>
+    </form>
+  </body>
 </html>
