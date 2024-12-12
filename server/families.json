@@ -1,0 +1,142 @@
+[
+  {
+    "family_id": 0,
+    "family_name": "The Thomsons",
+    "family_title": "Family without family",
+    "family_description": "We lost our whole family in a plane crash in 2005",
+    "family_picture": "https://thispersondoesnotexist.com/",
+    "booked": false,
+    "family_properties": {
+      "smokingAllowed": true,
+      "petsAllowed": false,
+      "overnightStay": true,
+      "veganFriendly": false
+    }
+  },
+  {
+    "family_id": 1,
+    "family_name": "The Langleys",
+    "family_title": "A Quiet Christmas",
+    "family_description": "Ever since our father passed away last year, Christmas has been very lonely.",
+    "family_picture": "https://thispersondoesnotexist.com/",
+    "booked": false,
+    "family_properties": {
+      "smokingAllowed": false,
+      "petsAllowed": true,
+      "overnightStay": false,
+      "veganFriendly": true
+    }
+  },
+  {
+    "family_id": 2,
+    "family_name": "The Parkers",
+    "family_title": "Struggling to Find Joy",
+    "family_description": "After losing our home due to financial difficulties, holidays have been hard for us.",
+    "family_picture": "https://thispersondoesnotexist.com/",
+    "booked": false,
+    "family_properties": {
+      "smokingAllowed": false,
+      "petsAllowed": false,
+      "overnightStay": true,
+      "veganFriendly": false
+    }
+  },
+  {
+    "family_id": 3,
+    "family_name": "The Grays",
+    "family_title": "A Season of Memories",
+    "family_description": "We miss our grandmother who always made Christmas special before she passed.",
+    "family_picture": "https://thispersondoesnotexist.com/",
+    "booked": false,
+    "family_properties": {
+      "smokingAllowed": true,
+      "petsAllowed": true,
+      "overnightStay": false,
+      "veganFriendly": true
+    }
+  },
+  {
+    "family_id": 4,
+    "family_name": "The Carters",
+    "family_title": "Missing Our Angel",
+    "family_description": "This year marks the fifth Christmas without our youngest son, who passed away in 2018.",
+    "family_picture": "https://thispersondoesnotexist.com/",
+    "booked": false,
+    "family_properties": {
+      "smokingAllowed": false,
+      "petsAllowed": true,
+      "overnightStay": true,
+      "veganFriendly": false
+    }
+  },
+  {
+    "family_id": 5,
+    "family_name": "The Davises",
+    "family_title": "A Solemn Celebration",
+    "family_description": "With no relatives nearby, Christmas has become a quiet day for us.",
+    "family_picture": "https://thispersondoesnotexist.com/",
+    "booked": false,
+    "family_properties": {
+      "smokingAllowed": false,
+      "petsAllowed": false,
+      "overnightStay": false,
+      "veganFriendly": true
+    }
+  },
+  {
+    "family_id": 6,
+    "family_name": "The Millers",
+    "family_title": "Holidays Apart",
+    "family_description": "Our family has been separated since we had to move to different cities for work.",
+    "family_picture": "https://thispersondoesnotexist.com/",
+    "booked": false,
+    "family_properties": {
+      "smokingAllowed": true,
+      "petsAllowed": true,
+      "overnightStay": true,
+      "veganFriendly": false
+    }
+  },
+  {
+    "family_id": 7,
+    "family_name": "The Fosters",
+    "family_title": "Empty Chairs at the Table",
+    "family_description": "We lost both parents in a car accident two years ago, and Christmas feels empty now.",
+    "family_picture": "https://thispersondoesnotexist.com/",
+    "booked": false,
+    "family_properties": {
+      "smokingAllowed": false,
+      "petsAllowed": false,
+      "overnightStay": false,
+      "veganFriendly": false
+    }
+  },
+  {
+    "family_id": 8,
+    "family_name": "The Bennetts",
+    "family_title": "A Little Hope",
+    "family_description": "We are a single-parent family trying to make ends meet during the holidays.",
+    "family_picture": "https://thispersondoesnotexist.com/",
+    "booked": false,
+    "family_properties": {
+      "smokingAllowed": true,
+      "petsAllowed": true,
+      "overnightStay": true,
+      "veganFriendly": true
+    }
+  },
+  {
+    "family_id": 9,
+    "family_name": "The Greens",
+    "family_title": "Remembering Our Loved Ones",
+    "family_description": "Christmas has been tough since we lost our uncle who was the heart of our gatherings.",
+    "family_picture": "https://thispersondoesnotexist.com/",
+    "booked": false,
+    "family_properties": {
+      "smokingAllowed": false,
+      "petsAllowed": false,
+      "overnightStay": true,
+      "veganFriendly": true
+    }
+  }
+]
