@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" href="./Images/christmas-tree.png" type="image/x-icon" />
+    <link rel="icon" href=./images/surprise.png type="image/x-icon" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -23,75 +23,85 @@
     <title>Family</title>
   </head>
   <body id="family-form">
-    <form action="/submit" method="post">
-      <!-- Family Name -->
-      <label for="family-name">Family name</label>
-      <input
-        type="text"
-        id="family-name"
-        name="familyName"
-        placeholder="Enter your family name"
-        required
-      />
+    <div id="family-container">
+      <form action="/submit" method="post">
+        <h2>We would like to offer Christmas evening with our Family</h2>
+        <label for="family-name">Family name</label>
+        <input
+          type="text"
+          id="family-name"
+          name="familyName"
+          placeholder="Enter your family name"
+          required
+        />
 
-      <label for="family-title">Family Title</label>
-      <input
-        type="text"
-        id="family-title"
-        name="familyTitle"
-        placeholder="Uniqe title for your fimily"
-        required
-      />
+        <label for="family-title">Family Title</label>
+        <input
+          type="text"
+          id="family-title"
+          name="familyTitle"
+          placeholder="Uniqe title for your fimily"
+          required
+        />
 
-      <label for="location">Location</label>
-      <input
-        type="text"
-        id="location"
-        name="location"
-        placeholder=" Where are you located?"
-        required
-      />
+        <label for="location">Location</label>
+        <input
+          type="text"
+          id="location"
+          name="location"
+          placeholder=" Where are you located?"
+          required
+        />
 
-      <label for="email">Email</label>
-      <input
-        type="email"
-        id="email"
-        name="email"
-        placeholder="Enter contact email adress"
-        required
-      />
+        <label for="email">Email</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="Enter contact email adress"
+          required
+        />
 
-      <label for="description">Few words about us...</label>
-      <textarea
-        id="description"
-        name="description"
-        placeholder="Write a brief description about your family here. Share your values, traditions or what makes your family uniqe in few sentances. (max.400 char.)"
-        required
-      ></textarea>
+        <label for="description">Few words about us...</label>
+        <textarea
+          rows="5"
+          id="description"
+          name="description"
+          placeholder="Write a brief description about your family here. Share your values, traditions or what makes your family uniqe in few sentances. (max.400 char.)"
+          required
+        ></textarea>
 
-      <label for="important-info">Special notes for guests</label>
-      <textarea
-        id="important-info"
-        name="importantInfo"
-        placeholder="Is there anything that guest should know ?(for example´We have nut allergy´ or ´We serve traditional polish cusine´)"
-      ></textarea>
-
-      <div class="checkbox-group">
-        <label>
-          <input type="checkbox" name="petsAllowed" /> Pets Allowed
+        <label for="family-photo" class="upload-label">
+          Add picture of your Family
         </label>
-        <label>
-          <input type="checkbox" name="smokingAllowed" /> Smoking Allowed
-        </label>
-        <label>
-          <input type="checkbox" name="veganFriendly" /> Vegan Friendly
-        </label>
-        <label>
-          <input type="checkbox" name="overnightStay" /> Overnight Stay
-        </label>
-      </div>
+        <input
+          type="file"
+          id="family-photo"
+          name="family-photo"
+          accept="image/*"
+          placeholder="Choose file"
+          required
+        />
 
-      <button class="button" type="submit">Submit</button>
-    </form>
+        <fieldset class="checkbox-group">
+          <legend>Your Preferences</legend>
+          <label>
+            <input type="checkbox" name="petsAllowed" /> Pets Allowed
+          </label>
+          <label>
+            <input type="checkbox" name="smokingAllowed" /> Smoking Allowed
+          </label>
+          <label>
+            <input type="checkbox" name="veganFriendly" /> Vegan Friendly
+          </label>
+          <label>
+            <input type="checkbox" name="overnightStay" /> Overnight Stay
+          </label>
+        </fieldset>
+
+        <button id="submit-btn" class="button" type="submit">Submit</button>
+      </form>
+    </div>
+    <script src="main.js"></script>
   </body>
 </html>
