@@ -16,12 +16,12 @@ body {
 }
 
 #home-page {
-  background-image: url("./images/bg-home.jpg");
+  background-image: url("../images/bg-home.jpg");
 }
 
 #individual-form,
 #family-form {
-  background-image: url("./images/bg-individual.jpg");
+  background-image: url("../images/bg-individual.jpg");
   background-repeat: repeat-y;
   display: flex;
   flex-direction: column;

@@ -43,4 +43,4 @@ async function data() {
   }
 }
 
-window.onload = loadFamiliesData;
+window.onload = data;
