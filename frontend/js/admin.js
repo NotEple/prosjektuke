@@ -80,12 +80,14 @@ function renderFamilies() {
     (family) =>
       (families.innerHTML += `<div class="family-${family.family_id} family-card">
                                 <div>
-                                  <p>${family.family_name}</p>
-                                  <p>${family.family_title}</p>
-                                  <img style="width: 5%;" src="${family.family_picture}" />
+                                  <p class="family-card" >${family.family_name}</p>
+                                  <p class="family-card" id="onerem">${family.family_title}</p>
+                                  <img class="family-card" style="width: 20%;" src="${family.family_picture}" />
                                 </div>
-                                <button id="editBtn" onclick="editFamilyById(${family.family_id})" type="button">Edit</button>
-                                <button id="delBtn" onclick="deleteFamily(${family.family_id})" type="button">Delete</button>
+                               
+                                <button class="family-card grey-button" id="onerem" onclick="editFamilyById(${family.family_id})" type="button">Edit</button>
+                             
+                              <button class="family-card grey-button" id="onerem" onclick="deleteFamily(${family.family_id})" type="button">Delete</button>
                               </div>`)
   );
   document.addEventListener("DOMContentLoaded", () => {

@@ -97,7 +97,8 @@ h2 {
 #family-container,
 #search-container,
 #family-info-container,
-#admin-container {
+#admin-container,
+#edit-container {
   display: flex;
   background-color: var(--cold-blue);
   opacity: 90%;
@@ -139,7 +140,9 @@ textarea {
 
 
 form,
-.form-model {
+.form-model,
+#edit-family-form,
+#edit-family {
   width: 90%;
 }
 
@@ -200,7 +203,10 @@ checkbox {
 #submit-btn,
 #search-btn,
 #add-btn,
-#families-btn {
+#families-btn,
+#edit-btn,
+#delete-btn,
+#save-btn {
 
   margin: 40px auto;
 }
@@ -254,4 +260,23 @@ input[type="checkbox"] {
 
 a {
   text-decoration: none;
+}
+
+.family-card {
+  color: var(--dark-red);
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 10px auto;
+  text-align: center;
+
+}
+
+#onerem {
+  font-size: 1rem;
+
+}
+
+.grey-button {
+  background-color: #77757584;
+
 }

@@ -68,6 +68,7 @@
           <legend>Your Preferences</legend>
           <label
             ><input
+              class="properties"
               type="checkbox"
               name="smokingAllowed"
               value="smokingAllowed"
@@ -76,12 +77,18 @@
           >
 
           <label
-            ><input type="checkbox" name="petsAllowed" value="petsAllowed" />
+            ><input
+              class="properties"
+              type="checkbox"
+              name="petsAllowed"
+              value="petsAllowed"
+            />
             Pets allowed</label
           >
 
           <label
             ><input
+              class="properties"
               type="checkbox"
               nname="overnightStay"
               value="overnightStay"
@@ -91,6 +98,7 @@
 
           <label
             ><input
+              class="properties"
               type="checkbox"
               name="veganFriendly"
               value="veganFriendly"
@@ -107,80 +115,8 @@
     </div>
 
     <div id="search-container">
-      <button id="families-btn" onclick="getFamilies();">Show Families</button>
-
-      <diolog id="edit-family" hidden>
-        <h2>Edit Family</h2>
-        <form id="edit-family-form">
-          <label for="family_name">Family Name:</label>
-          <input
-            type="text"
-            id="family_name"
-            name="family_name"
-            required
-          /><br />
-
-          <label for="family_title">Family Title:</label>
-          <input
-            type="text"
-            id="family_title"
-            name="family_title"
-            required
-          /><br />
-
-          <label for="family_description">Family Description:</label>
-          <input
-            type="text"
-            id="family_description"
-            name="family_description"
-            required
-          /><br />
-
-          <label for="family_picture">Family Picture URL:</label>
-          <input
-            type="text"
-            id="family_picture"
-            name="family_picture"
-            required
-          /><br />
-
-          <h3>Family Properties:</h3>
-          <label for="petsAllowed">Pets Allowed:</label>
-          <input
-            class="edit-family-properties"
-            type="checkbox"
-            id="petsAllowed"
-            name="petsAllowed"
-          /><br />
-
-          <label for="overnightStay">Overnight Stay:</label>
-          <input
-            class="edit-family-properties"
-            type="checkbox"
-            id="overnightStay"
-            name="overnightStay"
-          /><br />
-
-          <label for="smokingAllowed">Smoking Allowed:</label>
-          <input
-            type="checkbox"
-            id="smokingAllowed"
-            name="smokingAllowed"
-            class="edit-family-properties"
-          /><br />
-
-          <label for="veganFriendly">Vegan Friendly:</label>
-          <input
-            class="edit-family-properties"
-            type="checkbox"
-            id="veganFriendly"
-            name="veganFriendly"
-          /><br />
-
-          <button type="submit">Save</button>
-        </form>
-      </diolog>
       <div class="form-model">
+        <h2>Search Family</h2>
         <input
           id="search"
           placeholder="Describe the kind of family environment experience you are hoping for."
@@ -228,8 +164,93 @@
             Vegan Friendly
           </label>
         </fieldset>
-      </div>
 
+        <div id="families"></div>
+        <button id="families-btn" onclick="getFamilies();">
+          Show Families
+        </button>
+      </div>
+      <diolog id="edit-family" hidden>
+        <h2>Edit Family</h2>
+        <form id="edit-family-form">
+          <label for="family_name">Family Name:</label>
+          <input
+            type="text"
+            id="family_name"
+            name="family_name"
+            required
+          /><br />
+
+          <label for="family_title">Family Title:</label>
+          <input
+            type="text"
+            id="family_title"
+            name="family_title"
+            required
+          /><br />
+
+          <label for="family_description">Family Description:</label>
+          <input
+            type="text"
+            id="family_description"
+            name="family_description"
+            required
+          /><br />
+
+          <label for="family_picture">Family Picture URL:</label>
+          <input
+            type="text"
+            id="family_picture"
+            name="family_picture"
+            required
+          /><br />
+
+          <fieldset class="checkbox-group">
+            <legend>Family Preferences</legend>
+            <label
+              ><input
+                class="edit-family-properties"
+                type="checkbox"
+                id="editSmokingAllowed"
+                name="smokingAllowed"
+              />
+              Smoking allowed</label
+            >
+
+            <label
+              ><input
+                class="edit-family-properties"
+                type="checkbox"
+                id="editPetsAllowed"
+                name="petsAllowed"
+              />
+              Pets allowed</label
+            >
+
+            <label
+              ><input
+                class="edit-family-properties"
+                type="checkbox"
+                id="editOvernightStay"
+                name="overnightStay"
+              />
+              Overnight stay</label
+            >
+
+            <label
+              ><input
+                class="edit-family-properties"
+                type="checkbox"
+                id="editVeganFriendly"
+                name="veganFriendly"
+              />
+              Vegan Friendly
+            </label>
+          </fieldset>
+
+          <button id="save-btn" type="submit">Save</button>
+        </form>
+      </diolog>
       <div id="search-results"></div>
     </div>
   </body>

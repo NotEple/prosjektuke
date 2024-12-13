@@ -1,31 +1,5 @@
 [
   {
-    "family_id": 13,
-    "family_name": "The Brightons",
-    "family_title": "The Snowflake Squad",
-    "family_description": " We are The Brighton family! A warm and caring household with one adventurous little boy. We love spending time together decorating for the holidays, baking treats, and sharing stories by the fireplace. Our home radiates joy and is ready to welcome someone into their festive traditions this Christmas.",
-    "family_picture": "http://localhost:3000/uploads/d8daae490e1efceb0dca0abbf9224f56",
-    "family_properties": {
-      "smokingAllowed": false,
-      "petsAllowed": true,
-      "overnightStay": true,
-      "veganFriendly": false
-    }
-  },
-  {
-    "family_id": 14,
-    "family_name": "The Martinezes",
-    "family_title": "The Generations of Joy",
-    "family_description": "The Martinez family is a close-knit and loving group featuring a sweet 4-year-old boy, his caring parents, a cheerful grandmother, and his fun-loving aunt. Their home is filled with laughter, heartfelt traditions, and a strong sense of togetherness. They are eager to share their festive warmth with someone special this holiday season.",
-    "family_picture": "http://localhost:3000/uploads/68c7d367e26a58b013697f77ccd031a1",
-    "family_properties": {
-      "smokingAllowed": false,
-      "petsAllowed": true,
-      "overnightStay": true,
-      "veganFriendly": false
-    }
-  },
-  {
     "family_id": 15,
     "family_name": "The Evergreens",
     "family_title": " Holiday Enthusiasts",
