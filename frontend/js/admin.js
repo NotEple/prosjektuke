@@ -118,7 +118,7 @@ async function getFamilyById(id) {
     const res = await req.json();
     return res;
   } catch (error) {
-    console.error(error);
+    console.log(error);
   }
 }
 
@@ -189,7 +189,7 @@ async function editFamily(body) {
     }
     console.log("Family updated successfully!");
   } catch (error) {
-    console.error("Error updating family:", error);
+    console.log("Error updating family:", error);
   }
 }
 
