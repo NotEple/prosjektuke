@@ -56,14 +56,14 @@
         />
 
         <label for="description">Family Description</label>
-        <input
+        <textarea
           id="description"
           type="text"
           name="description"
           minlength="40"
           placeholder="Write a brief description about your family here. Share your values, traditions or what makes your family uniqe in few sentances. (max.400 char.)"
           required
-        />
+        ></textarea>
         <fieldset class="checkbox-group">
           <legend>Your Preferences</legend>
           <label
@@ -170,6 +170,7 @@
           Show Families
         </button>
       </div>
+
       <dialog id="edit-family" hidden>
         <h2>Edit Family</h2>
         <form id="edit-family-form">
@@ -251,6 +252,7 @@
           <button id="save-btn" type="submit">Save</button>
         </form>
       </dialog>
+
       <div id="search-results"></div>
     </div>
   </body>

@@ -280,3 +280,7 @@ a {
   background-color: #77757584;
 
 }
+
+dialog[open] {
+  display: block;
+}

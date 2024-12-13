@@ -42,6 +42,7 @@ newFamilyForm.addEventListener("submit", (e) => {
   formData.append("family_properties", JSON.stringify(familyProperties));
 
   newFamily(formData);
+  newFamilyForm.reset();
 });
 
 // ? Creates a new family by taking a body as paremeter
@@ -144,7 +145,7 @@ async function editFamilyById(id) {
   familyId = id;
   const family = await getFamilyById(id);
 
-  editFamilyDialog.style.display = "block";
+  editFamilyDialog.showModal();
 
   document.getElementById("family_name").value = family.family_name;
   document.getElementById("family_title").value = family.family_title;
@@ -188,6 +189,8 @@ async function editFamily(body) {
       throw new Error("Failed to update family object");
     }
     console.log("Family updated successfully!");
+
+    editFamilyDialog.close();
   } catch (error) {
     console.log("Error updating family:", error);
   }
