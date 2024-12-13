@@ -27,74 +27,88 @@
     <script src="../js/admin.js" defer></script>
     <title>Admin Panel</title>
   </head>
+
   <body id="admin-page">
-    <main id="admin-container">
-      <h1>Welcome to the admin panel</h1>
+    <div id="admin-container">
+      <h2>Welcome to the admin panel</h2>
 
-      <form style="display: flex; flex-direction: column" id="new-family-form">
-        <h2>Add a new family to the list</h2>
+      <form id="new-family-form">
+        <h3>New Family</h3>
 
-        <div class="new-family-container">
-          <label for="name">Name </label>
-          <input id="name" type="text" name="name" minlength="5" required />
-        </div>
+        <label for="name">Family Name </label>
+        <input
+          id="name"
+          type="text"
+          name="name"
+          minlength="5"
+          placeholder="Enter your family name"
+          required
+        />
 
-        <div class="new-family-container">
-          <label for="title">Title </label>
-          <input id="title" type="text" name="title" minlength="5" required />
-        </div>
+        <label for="title">Family Title </label>
+        <input
+          id="title"
+          type="text"
+          name="title"
+          minlength="5"
+          placeholder="Uniqe title for your fimily"
+          required
+        />
 
-        <div class="new-family-container">
-          <label for="description">Description </label>
-          <input
-            id="description"
-            type="text"
-            name="description"
-            minlength="40"
-            required
-          />
-        </div>
+        <label for="description">Family Description</label>
+        <input
+          id="description"
+          type="text"
+          name="description"
+          minlength="40"
+          placeholder="Write a brief description about your family here. Share your values, traditions or what makes your family uniqe in few sentances. (max.400 char.)"
+          required
+        />
+        <fieldset class="checkbox-group">
+          <legend>Your Preferences</legend>
+          <label
+            ><input
+              type="checkbox"
+              name="smokingAllowed"
+              value="smokingAllowed"
+            />
+            Smoking allowed</label
+          >
 
-        <p style="color: #9d1717">Properties</p>
-        <div class="new-family-properties">
-          <label for="smokingAllowed">Smoking Allowed </label>
-          <input
-            class="properties"
-            type="checkbox"
-            name="smokingAllowed"
-            value="smokingAllowed"
-          />
+          <label
+            ><input type="checkbox" name="petsAllowed" value="petsAllowed" />
+            Pets allowed</label
+          >
 
-          <label for="petsAllowed">Pets Allowed </label>
-          <input
-            class="properties"
-            type="checkbox"
-            name="petsAllowed"
-            value="petsAllowed"
-          />
+          <label
+            ><input
+              type="checkbox"
+              nname="overnightStay"
+              value="overnightStay"
+            />
+            Overnight stay</label
+          >
 
-          <label for="overnightStay">Overnight Stay </label>
-          <input
-            class="properties"
-            type="checkbox"
-            name="overnightStay"
-            value="overnightStay"
-          />
+          <label
+            ><input
+              type="checkbox"
+              name="veganFriendly"
+              value="veganFriendly"
+            />
+            Vegan Friendly
+          </label>
+        </fieldset>
 
-          <label for="veganFriendly">Vegan Friendly </label>
-          <input
-            class="properties"
-            type="checkbox"
-            name="veganFriendly"
-            value="veganFriendly"
-          />
-        </div>
-        <label for="picture">Picture </label>
+        <label for="picture">Family Picture </label>
         <input id="picture" name="picture" type="file" accept="image/*" />
-        <button id="submitBtn" type="submit">Add New</button>
+
+        <button id="add-btn" type="submit">Add new Family</button>
       </form>
-      <div id="families"></div>
-      <button onclick="getFamilies();">Families</button>
+    </div>
+
+    <div id="search-container">
+      <button id="families-btn" onclick="getFamilies();">Show Families</button>
+
       <diolog id="edit-family" hidden>
         <h2>Edit Family</h2>
         <form id="edit-family-form">
@@ -166,40 +180,57 @@
           <button type="submit">Save</button>
         </form>
       </diolog>
-      <input id="search" />
-      <h3>Family Properties:</h3>
-      <label for="petsAllowed">Pets Allowed:</label>
-      <input
-        class="filter-family-properties"
-        type="checkbox"
-        id="filterPetsAllowed"
-        name="petsAllowed"
-      /><br />
+      <div class="form-model">
+        <input
+          id="search"
+          placeholder="Describe the kind of family environment experience you are hoping for."
+        />
 
-      <label for="overnightStay">Overnight Stay:</label>
-      <input
-        class="filter-family-properties"
-        type="checkbox"
-        id="filterOvernightStay"
-        name="overnightStay"
-      /><br />
+        <fieldset class="checkbox-group">
+          <legend>Family Preferences</legend>
+          <label
+            ><input
+              class="filter-family-properties"
+              type="checkbox"
+              id="filterSmokingAllowed"
+              name="smokingAllowed"
+            />
+            Smoking allowed</label
+          >
 
-      <label for="smokingAllowed">Smoking Allowed:</label>
-      <input
-        class="filter-family-properties"
-        type="checkbox"
-        id="filterSmokingAllowed"
-        name="smokingAllowed"
-      /><br />
+          <label
+            ><input
+              class="filter-family-properties"
+              type="checkbox"
+              id="filterPetsAllowed"
+              name="petsAllowed"
+            />
+            Pets allowed</label
+          >
 
-      <label for="veganFriendly">Vegan Friendly:</label>
-      <input
-        class="filter-family-properties"
-        type="checkbox"
-        id="filterVeganFriendly"
-        name="veganFriendly"
-      /><br />
+          <label
+            ><input
+              class="filter-family-properties"
+              type="checkbox"
+              id="filterOvernightStay"
+              name="overnightStay"
+            />
+            Overnight stay</label
+          >
+
+          <label
+            ><input
+              class="filter-family-properties"
+              type="checkbox"
+              id="filterVeganFriendly"
+              name="veganFriendly"
+            />
+            Vegan Friendly
+          </label>
+        </fieldset>
+      </div>
+
       <div id="search-results"></div>
-    </main>
+    </div>
   </body>
 </html>

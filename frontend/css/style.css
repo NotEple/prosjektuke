@@ -20,7 +20,8 @@ body {
 }
 
 #individual-form,
-#family-form {
+#family-form,
+#admin-page {
   background-image: url("../images/bg-individual.jpg");
   background-repeat: repeat-y;
   display: flex;
@@ -77,9 +78,15 @@ a {
 }
 
 h1,
+h2,
 h3,
 a {
   color: var(--dark-red);
+}
+
+h2 {
+  font-family: var(--festive-font);
+  font-size: 3rem;
 }
 
 #last-line {
@@ -89,7 +96,8 @@ a {
 
 #family-container,
 #search-container,
-#family-info-container {
+#family-info-container,
+#admin-container {
   display: flex;
   background-color: var(--cold-blue);
   opacity: 90%;
@@ -127,11 +135,11 @@ textarea {
   border-radius: 16px;
 }
 
-fieldset {
-  width: 100%
-}
 
-form {
+
+
+form,
+.form-model {
   width: 90%;
 }
 
@@ -164,7 +172,7 @@ button:hover {
 
 }
 
-fieldset {
+.checkbox-group {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -172,7 +180,8 @@ fieldset {
   align-content: flex-start;
   row-gap: 20px;
   flex-wrap: wrap;
-
+  width: 100%;
+  margin: 20px 0;
 }
 
 checkbox {
@@ -189,7 +198,9 @@ checkbox {
 }
 
 #submit-btn,
-#search-btn {
+#search-btn,
+#add-btn,
+#families-btn {
 
   margin: 40px auto;
 }
