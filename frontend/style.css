@@ -22,8 +22,14 @@ body {
 #individual-form,
 #family-form {
   background-image: url("./images/bg-individual.jpg");
+<<<<<<< HEAD
   display: flex;
   justify-content: center;
+=======
+  background-repeat: repeat-y;
+  display: flex;
+  flex-direction: column;
+>>>>>>> main
 }
 
 
@@ -86,19 +92,36 @@ a {
   font-size: 2rem;
 }
 
+<<<<<<< HEAD
 #family-container {
   display: flex;
   background-color: var(--cold-blue);
   opacity: 70%;
+=======
+#family-container,
+#search-container,
+#family-info-container {
+  display: flex;
+  background-color: var(--cold-blue);
+  opacity: 90%;
+>>>>>>> main
   flex-direction: column;
   justify-content: center;
   align-items: center;
   margin: 100px auto;
+<<<<<<< HEAD
   padding: 50px;
   border-radius: 16px;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
   width: 950px;
   height: 950px;
+=======
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  width: 950px;
+
+>>>>>>> main
 }
 
 #family-container h2 {
@@ -122,6 +145,7 @@ textarea {
   align-self: stretch;
   border: 2px solid #808080;
   border-radius: 16px;
+<<<<<<< HEAD
 
 
 }
@@ -131,6 +155,24 @@ label {
   color: #9D1717;
   font-family: Montserrat;
   font-size: 0.88rem;
+=======
+}
+
+fieldset {
+  width: 100%
+}
+
+form {
+  width: 90%;
+}
+
+label,
+legend {
+
+  color: #9D1717;
+  font-family: Montserrat;
+  font-size: 1rem;
+>>>>>>> main
   font-style: normal;
   font-weight: 400;
   line-height: normal;
@@ -154,7 +196,11 @@ button:hover {
 
 }
 
+<<<<<<< HEAD
 .checkbox-group {
+=======
+fieldset {
+>>>>>>> main
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -178,7 +224,65 @@ checkbox {
 
 }
 
+<<<<<<< HEAD
 #submit-btn {
 
   margin: 20px auto;
+=======
+#submit-btn,
+#search-btn {
+
+  margin: 40px auto;
+}
+
+#specialRequests,
+#experience {
+  height: 50px;
+}
+
+input[type="checkbox"] {
+  accent-color: var(--dark-red);
+
+}
+
+#family-title {
+  font-family: var(--festive-font);
+  font-size: 2rem;
+  color: black;
+  grid-area: title;
+}
+
+#preferances-results {
+  color: var(--dark-red);
+  display: grid;
+  margin: 0;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, auto);
+  gap: 10px;
+  grid-area: preferances;
+}
+
+#preferances-results p {
+  margin: 0;
+}
+
+#family-picture {
+  width: 250px;
+  height: 170px;
+
+  grid-area: image;
+}
+
+#family-info-container {
+  display: grid;
+  grid-template-columns: 65% 35%;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas: "title  image"
+    "preferances image";
+
+}
+
+a {
+  text-decoration: none;
+>>>>>>> main
 }
