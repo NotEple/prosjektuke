@@ -1,67 +1,61 @@
-
-  <!DOCTYPE html>
-  <html lang="en">
+<!DOCTYPE html>
+<html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      href="../../images/christmas-tree.png"
+      type="image/x-icon"
+    />
+
     <title>Document</title>
-     <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/style.css" />
   </head>
- 
-  </html>
-  
+
   <body id="individual-form">
     <div id="search-container">
-      <form action="/search" method="GET">
+      <form method="GET" id="form">
         <label for="experience">What Are You Looking For</label>
         <textarea
           rows="3"
           id="experience"
           name="experience"
           placeholder="Describe the kind of family environment experience you are hoping for."
-          required
         ></textarea>
 
-       
-
-        <fieldset class="checkbox-group">
+        <fieldset id="checkbox-group">
           <legend>Your Preferences</legend>
-          <label><input type="checkbox" name="IHavepet" /> I have a pet</label>
-
           <label
-            ><input type="checkbox" name="IAmsmoking" /> I am smoking</label
+            ><input type="checkbox" name="IHavepet" class="checkbox" /> I have a
+            pet</label
           >
 
-          <label><input type="checkbox" name="IAmvegan" /> I am vegan</label>
+          <label
+            ><input type="checkbox" name="IAmsmoking" class="checkbox" /> I am
+            smoking</label
+          >
 
           <label
-            ><input type="checkbox" name="IWantovernightStay" /> I would like to
-            stay over</label
+            ><input type="checkbox" name="IAmvegan" class="checkbox" /> I am
+            vegan</label
+          >
+
+          <label
+            ><input
+              type="checkbox"
+              name="IWantovernightStay"
+              class="checkbox"
+            />
+            I would like to stay over</label
           >
         </fieldset>
 
-        <button id="search-btn" type="submit">Search</button>
+        <button id="search-btn">Search</button>
       </form>
     </div>
 
-    <div id="family-info-container">
-      <h3>
-        Family Title:
-        <span id="family-title"> The Chirstamas Party Experts</span>
-      </h3>
-      <div id="preferances-results">
-        <p>Pets Allowed: Yes</p>
-        <p>Smoking Allowed:No</p>
-        <p>Vegan Friendly:No</p>
-        <p>Overnight Stay:No</p>
-      </div>
-
-      <img
-        id="family-picture"
-        src="../images/family-example.jpg"
-        alt="happy familly, playing in the sun with soap bubbles"
-      />
-    </div>
-    <script src="main.js"></script>
+    <div id="families-container"></div>
+    <script src="../main.js"></script>
   </body>
 </html>
