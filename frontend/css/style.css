@@ -1,12 +1,11 @@
 :root {
   --dark-red: #8b0000;
-  --cold-blue: #BAD2DA;
-  --festive-font: 'Ms Madi', cursive;
+  --cold-blue: #bad2da;
+  --festive-font: "Ms Madi", cursive;
 }
 
-
 body {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   color: whitesmoke;
   background-size: cover;
   background-repeat: no-repeat;
@@ -27,8 +26,6 @@ body {
   flex-direction: column;
 }
 
-
-
 h1 {
   font-size: 6rem;
   font-family: var(--festive-font);
@@ -43,7 +40,7 @@ h1 {
 
 button {
   border-radius: 90px;
-  border: 1px solid #9D1717;
+  border: 1px solid #9d1717;
   color: var(--dark-red);
   background-color: var(--cold-blue);
 
@@ -72,7 +69,6 @@ button {
 }
 
 a {
-
   font-weight: bold;
 }
 
@@ -101,7 +97,6 @@ a {
   border-radius: 16px;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
   width: 950px;
-
 }
 
 #family-container h2 {
@@ -110,7 +105,6 @@ a {
   font-family: var(--festive-font);
   font-size: 2.25rem;
   font-weight: 400;
-
 }
 
 input,
@@ -128,7 +122,7 @@ textarea {
 }
 
 fieldset {
-  width: 100%
+  width: 100%;
 }
 
 form {
@@ -137,8 +131,7 @@ form {
 
 label,
 legend {
-
-  color: #9D1717;
+  color: #9d1717;
   font-family: Montserrat;
   font-size: 1rem;
   font-style: normal;
@@ -147,21 +140,18 @@ legend {
 }
 
 input placeholder {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   width: 100%;
   height: 40px;
   padding: 10px 13px;
   border-radius: 16px;
   border: 2px solid #808080;
   font-size: 0.88rem;
-
 }
-
 
 button:hover {
   background-color: var(--dark-red);
   color: var(--cold-blue);
-
 }
 
 fieldset {
@@ -172,7 +162,6 @@ fieldset {
   align-content: flex-start;
   row-gap: 20px;
   flex-wrap: wrap;
-
 }
 
 checkbox {
@@ -184,13 +173,11 @@ checkbox {
 }
 
 #description ::placeholder {
-  font-family: 'Montserrat', sans-serif;
-
+  font-family: "Montserrat", sans-serif;
 }
 
 #submit-btn,
 #search-btn {
-
   margin: 40px auto;
 }
 
@@ -201,7 +188,6 @@ checkbox {
 
 input[type="checkbox"] {
   accent-color: var(--dark-red);
-
 }
 
 #family-title {
@@ -236,11 +222,60 @@ input[type="checkbox"] {
   display: grid;
   grid-template-columns: 65% 35%;
   grid-template-rows: 1fr 1fr;
-  grid-template-areas: "title  image"
+  grid-template-areas:
+    "title  image"
     "preferances image";
-
 }
 
 a {
   text-decoration: none;
+}
+
+/* ! ALL FAMILY CONTAINER HAS TO BE CLASS */
+.family-info-container {
+  display: flex;
+  background-color: var(--cold-blue);
+  opacity: 90%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 16px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  width: 950px;
+  margin: 100px auto;
+  padding: 30px;
+  display: grid;
+  grid-template-columns: 65% 35%;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas:
+    "title  image"
+    "preferances image";
+}
+
+.family-title {
+  font-family: var(--festive-font);
+  font-size: 2rem;
+  color: black;
+  grid-area: title;
+}
+
+.preferences-results {
+  color: var(--dark-red);
+  display: grid;
+  margin: 0;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, auto);
+  gap: 10px;
+  grid-area: preferances;
+}
+
+.preferences-results p {
+  margin: 0;
+}
+
+.family-picture {
+  width: 250px;
+  height: 170px;
+
+  grid-area: image;
 }
