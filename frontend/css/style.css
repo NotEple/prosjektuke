@@ -1,12 +1,11 @@
 :root {
   --dark-red: #8b0000;
-  --cold-blue: #BAD2DA;
-  --festive-font: 'Ms Madi', cursive;
+  --cold-blue: #bad2da;
+  --festive-font: "Ms Madi", cursive;
 }
 
-
 body {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   color: whitesmoke;
   background-size: cover;
   background-repeat: no-repeat;
@@ -28,8 +27,6 @@ body {
   flex-direction: column;
 }
 
-
-
 h1 {
   font-size: 6rem;
   font-family: var(--festive-font);
@@ -44,7 +41,7 @@ h1 {
 
 button {
   border-radius: 90px;
-  border: 1px solid #9D1717;
+  border: 1px solid #9d1717;
   color: var(--dark-red);
   background-color: var(--cold-blue);
 
@@ -73,7 +70,6 @@ button {
 }
 
 a {
-
   font-weight: bold;
 }
 
@@ -94,7 +90,6 @@ h2 {
   font-size: 2rem;
 }
 
-
 #family-container,
 #search-container,
 .family-info-container,
@@ -112,7 +107,6 @@ h2 {
   border-radius: 16px;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
   width: 950px;
-
 }
 
 #family-container h2 {
@@ -121,7 +115,6 @@ h2 {
   font-family: var(--festive-font);
   font-size: 2.25rem;
   font-weight: 400;
-
 }
 
 input,
@@ -138,9 +131,6 @@ textarea {
   border-radius: 16px;
 }
 
-
-
-
 form,
 .form-model,
 #edit-family-form,
@@ -150,8 +140,7 @@ form,
 
 label,
 legend {
-
-  color: #9D1717;
+  color: #9d1717;
   font-family: Montserrat;
   font-size: 1rem;
   font-style: normal;
@@ -160,21 +149,18 @@ legend {
 }
 
 input placeholder {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   width: 100%;
   height: 40px;
   padding: 10px 13px;
   border-radius: 16px;
   border: 2px solid #808080;
   font-size: 0.88rem;
-
 }
-
 
 button:hover {
   background-color: var(--dark-red);
   color: var(--cold-blue);
-
 }
 
 .checkbox-group {
@@ -198,8 +184,7 @@ checkbox {
 }
 
 #description ::placeholder {
-  font-family: 'Montserrat', sans-serif;
-
+  font-family: "Montserrat", sans-serif;
 }
 
 #submit-btn,
@@ -210,7 +195,6 @@ checkbox {
 #delete-btn,
 #save-btn,
 #close-dialog-btn {
-
   margin: 40px auto;
   cursor: pointer;
 }
@@ -222,7 +206,6 @@ checkbox {
 
 input[type="checkbox"] {
   accent-color: var(--dark-red);
-
 }
 
 #family-title {
@@ -257,11 +240,12 @@ input[type="checkbox"] {
   display: grid;
   grid-template-columns: 65% 35%;
   grid-template-rows: 1fr 1fr;
-  grid-template-areas: "title  image"
+  grid-template-areas:
+    "title  image"
     "preferances image";
   gap: 20px;
   margin: 20px 0;
-
+  width: 80%;
 }
 
 a {
@@ -274,17 +258,14 @@ a {
   font-weight: 600;
   margin: 10px auto;
   text-align: center;
-
 }
 
 #onerem {
   font-size: 1rem;
-
 }
 
 .grey-button {
   background-color: #77757584;
-
 }
 
 dialog[open] {
