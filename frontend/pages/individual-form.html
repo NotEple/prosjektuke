@@ -1,16 +1,20 @@
-
-  <!DOCTYPE html>
-  <html lang="en">
+<!DOCTYPE html>
+<html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-     <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/style.css" />
   </head>
- 
-  </html>
-  
+
   <body id="individual-form">
+    <nav style="margin-left: auto; display: flex">
+      <ul>
+        <li style="list-style: none">
+          <a href="./admin-panel.html">Admin</a>
+        </li>
+      </ul>
+    </nav>
     <div id="search-container">
       <form action="/search" method="GET">
         <label for="experience">What Are You Looking For</label>
@@ -22,33 +26,46 @@
           required
         ></textarea>
 
-       
-
         <fieldset class="checkbox-group">
           <legend>Your Preferences</legend>
-          <label><input  class="filter-family-properties"
+          <label
+            ><input
+              class="filter-family-properties"
               type="checkbox"
               id="filterPetsAllowed"
-              name="petsAllowed" /> I have a pet</label>
-
-          <label
-            ><input class="filter-family-properties"
-              type="checkbox"
-              id="filterSmokingAllowed"
-              name="smokingAllowed" /> I am smoking</label
+              name="petsAllowed"
+            />
+            I have a pet</label
           >
 
-          <label><input  class="filter-family-properties"
+          <label
+            ><input
+              class="filter-family-properties"
               type="checkbox"
-              id="filterVeganFriendly"
-              name="veganFriendly"/> I am vegan</label>
+              id="filterSmokingAllowed"
+              name="smokingAllowed"
+            />
+            I am smoking</label
+          >
 
           <label
-            ><input  class="filter-family-properties"
+            ><input
+              class="filter-family-properties"
+              type="checkbox"
+              id="filterVeganFriendly"
+              name="veganFriendly"
+            />
+            I am vegan</label
+          >
+
+          <label
+            ><input
+              class="filter-family-properties"
               type="checkbox"
               id="filterOvernightStay"
-              name="overnightStay" /> I would like to
-            stay over</label
+              name="overnightStay"
+            />
+            I would like to stay over</label
           >
         </fieldset>
 
@@ -56,9 +73,7 @@
       </form>
     </div>
 
-    <div class="family-info-container" id="family-info-container">
-     
-    </div>
+    <div class="family-info-container" id="family-info-container"></div>
 
     <div id="dialog-container"></div>
 
