@@ -91,9 +91,6 @@ function renderFamilies() {
                               <button class="family-card grey-button" id="onerem" onclick="deleteFamily(${family.family_id})" type="button">Delete</button>
                               </div>`)
   );
-  document.addEventListener("DOMContentLoaded", () => {
-    getFamilies();
-  });
 }
 
 // ? Delete a family by id
@@ -196,51 +193,6 @@ async function editFamily(body) {
   }
 }
 
-const search = document.getElementById("search");
-const searchResults = document.getElementById("search-results");
-
-const filterFamiliesProperties = document.querySelectorAll(
-  ".filter-family-properties"
-);
-let debounceTimeout;
-
-let searchResultsArray = [];
-
-checkboxes.forEach((checkbox) => {
-  const propertyName = checkbox.getAttribute("name");
-
-  checkbox.checked = family.family_properties[propertyName] || false;
-
-  editFamilyProperties[propertyName] = checkbox.checked;
-
-  checkbox.addEventListener("change", () => {
-    editFamilyProperties[propertyName] = checkbox.checked;
-  });
-});
-
-search.addEventListener("keydown", (e) => {
-  clearTimeout(debounceTimeout);
-
-  console.log(e.key);
-
-  debounceTimeout = setTimeout(async () => {
-    try {
-      const req = await fetch(
-        `http://localhost:3000/families?value=${e.target.value}`
-      );
-      const res = await req.json();
-
-      searchResultsArray = res;
-
-      console.log(res);
-
-      // searchResultsArray.forEach(
-      //   (family) =>
-      //     (searchResults.innerHTML += `<div>${family.family_description}</div>`)
-      // );
-    } catch (error) {
-      console.log(error);
-    } finally {
-    }
-  }, 1000);
+document.addEventListener("DOMContentLoaded", () => {
+  getFamilies();
 });
