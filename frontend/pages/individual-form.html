@@ -26,42 +26,42 @@
 
         <fieldset class="checkbox-group">
           <legend>Your Preferences</legend>
-          <label><input type="checkbox" name="IHavepet" /> I have a pet</label>
+          <label><input  class="filter-family-properties"
+              type="checkbox"
+              id="filterPetsAllowed"
+              name="petsAllowed" /> I have a pet</label>
 
           <label
-            ><input type="checkbox" name="IAmsmoking" /> I am smoking</label
+            ><input class="filter-family-properties"
+              type="checkbox"
+              id="filterSmokingAllowed"
+              name="smokingAllowed" /> I am smoking</label
           >
 
-          <label><input type="checkbox" name="IAmvegan" /> I am vegan</label>
+          <label><input  class="filter-family-properties"
+              type="checkbox"
+              id="filterVeganFriendly"
+              name="veganFriendly"/> I am vegan</label>
 
           <label
-            ><input type="checkbox" name="IWantovernightStay" /> I would like to
+            ><input  class="filter-family-properties"
+              type="checkbox"
+              id="filterOvernightStay"
+              name="overnightStay" /> I would like to
             stay over</label
           >
         </fieldset>
 
-        <button id="search-btn" type="submit">Search</button>
+        <button id="search-btn" type="button">Search</button>
       </form>
     </div>
 
-    <div id="family-info-container">
-      <h3>
-        Family Title:
-        <span id="family-title"> The Chirstamas Party Experts</span>
-      </h3>
-      <div id="preferances-results">
-        <p>Pets Allowed: Yes</p>
-        <p>Smoking Allowed:No</p>
-        <p>Vegan Friendly:No</p>
-        <p>Overnight Stay:No</p>
-      </div>
-
-      <img
-        id="family-picture"
-        src="../images/family-example.jpg"
-        alt="happy familly, playing in the sun with soap bubbles"
-      />
+    <div class="family-info-container" id="family-info-container">
+     
     </div>
-    <script src="main.js"></script>
+
+    <div id="dialog-container"></div>
+
+    <script src="../js/index.js" defer></script>
   </body>
 </html>

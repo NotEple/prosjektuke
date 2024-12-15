@@ -94,11 +94,13 @@ h2 {
   font-size: 2rem;
 }
 
+
 #family-container,
 #search-container,
-#family-info-container,
+.family-info-container,
 #admin-container,
-#edit-container {
+#edit-container,
+.family-info-container-small {
   display: flex;
   background-color: var(--cold-blue);
   opacity: 90%;
@@ -206,9 +208,11 @@ checkbox {
 #families-btn,
 #edit-btn,
 #delete-btn,
-#save-btn {
+#save-btn,
+#close-dialog-btn {
 
   margin: 40px auto;
+  cursor: pointer;
 }
 
 #specialRequests,
@@ -249,12 +253,14 @@ input[type="checkbox"] {
   grid-area: image;
 }
 
-#family-info-container {
+#family-info-container-small {
   display: grid;
   grid-template-columns: 65% 35%;
   grid-template-rows: 1fr 1fr;
   grid-template-areas: "title  image"
     "preferances image";
+  gap: 20px;
+  margin: 20px 0;
 
 }
 
@@ -283,4 +289,29 @@ a {
 
 dialog[open] {
   display: block;
+}
+
+#family-picture-dialog {
+  width: 300px;
+  height: 220px;
+  transition: transform 0.2s linear;
+  cursor: pointer;
+}
+
+#family-picture-dialog.zoomed {
+  transform: scale(2) translateX(150px) translateY(-100px);
+}
+
+#family-title-dialog {
+  font-family: var(--festive-font);
+  font-size: 2rem;
+}
+
+.p-dialog {
+  color: var(--dark-red);
+}
+
+#family-name-dialog {
+  font-weight: 700;
+  font-size: 1.5rem;
 }

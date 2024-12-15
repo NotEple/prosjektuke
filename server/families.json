@@ -176,8 +176,8 @@
     "family_picture": "http://localhost:3000/uploads/79187139ec81e5f9e2028c863bd43882",
     "family_properties": {
       "smokingAllowed": false,
-      "petsAllowed": false,
-      "overnightStay": false,
+      "petsAllowed": true,
+      "overnightStay": true,
       "veganFriendly": false
     }
   },
