@@ -1,120 +1,298 @@
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-}
-
-html {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  height: 100vh;
-  width: 100vw;
+:root {
+  --dark-red: #8b0000;
+  --cold-blue: #bad2da;
+  --festive-font: "Ms Madi", cursive;
 }
 
 body {
-  font-family: Montserrat, sans-serif;
+  font-family: "Montserrat", sans-serif;
+  color: whitesmoke;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-color: rgb(129, 129, 129);
+  box-sizing: border-box;
 }
 
 #home-page {
   background-image: url("../images/bg-home.jpg");
 }
 
-#individual-form {
-  background-image: url("../images/bg-individual.jpg");
-}
-
-#family-form {
-  background-image: url("../images/bg.family.jpg");
-}
-
+#individual-form,
+#family-form,
 #admin-page {
   background-image: url("../images/bg-individual.jpg");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 100%;
   background-repeat: repeat-y;
   display: flex;
   flex-direction: column;
-  align-items: center;
 }
 
-#admin-container {
+h1 {
+  font-size: 6rem;
+  font-family: var(--festive-font);
+
+  margin: 0;
+}
+
+#home-container p {
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+button {
+  border-radius: 90px;
+  border: 1px solid #9d1717;
+  color: var(--dark-red);
+  background-color: var(--cold-blue);
+
   display: flex;
-  flex-direction: column;
-  width: 950px;
-  padding: 42px 10px;
+  width: 250px;
+  padding: 11px;
   justify-content: center;
   align-items: center;
-  gap: 10px;
-  flex-shrink: 0;
-  border-radius: 30px;
-  border: 5px solid #bad2da;
-  background: rgba(186, 210, 218, 0.7);
+  gap: 1px;
+  align-self: stretch;
 }
 
-#new-family-form {
-  width: 650px;
-  display: flex;
-  gap: 10px;
-  padding: 20px;
-}
-
-.new-family-container {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  margin: auto;
-}
-
-.new-family-properties {
+#button-box {
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  gap: 100px;
 }
 
-label {
+#home-container {
   display: flex;
+  width: 80%;
   flex-direction: column;
-  width: 100%;
-  color: #9d1717;
+  align-items: center;
+  gap: 28px;
+  margin: 400px auto 0 auto;
 }
 
-.family {
-  background: red;
+a {
+  font-weight: bold;
 }
 
-#edit-family {
-  display: none;
+h1,
+h2,
+h3,
+a {
+  color: var(--dark-red);
+}
+
+h2 {
+  font-family: var(--festive-font);
+  font-size: 3rem;
+}
+
+#last-line {
+  font-family: var(--festive-font);
+  font-size: 2rem;
+}
+
+#family-container,
+#search-container,
+.family-info-container,
+#admin-container,
+#edit-container,
+.family-info-container-small {
+  display: flex;
+  background-color: var(--cold-blue);
+  opacity: 90%;
   flex-direction: column;
-  width: 950px;
-  padding: 42px 10px;
   justify-content: center;
   align-items: center;
-  gap: 10px;
-  flex-shrink: 0;
-  border-radius: 30px;
+  margin: 100px auto;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  width: 950px;
 }
 
-#new-family-form {
+#family-container h2 {
+  color: var(--dark-red);
+  text-align: center;
+  font-family: var(--festive-font);
+  font-size: 2.25rem;
+  font-weight: 400;
+}
+
+input,
+textarea {
   display: flex;
+  height: 20px;
+  width: 100%;
+  padding: 10px 13px;
+  align-items: center;
+  margin: 10px;
+  flex-shrink: 0;
+  align-self: stretch;
+  border: 2px solid #808080;
+  border-radius: 16px;
+}
+
+form,
+.form-model,
+#edit-family-form,
+#edit-family {
+  width: 90%;
+}
+
+label,
+legend {
+  color: #9d1717;
+  font-family: Montserrat;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+input placeholder {
+  font-family: "Montserrat", sans-serif;
+  width: 100%;
+  height: 40px;
+  padding: 10px 13px;
+  border-radius: 16px;
+  border: 2px solid #808080;
+  font-size: 0.88rem;
+}
+
+button:hover {
+  background-color: var(--dark-red);
+  color: var(--cold-blue);
+}
+
+.checkbox-group {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  align-content: flex-start;
+  row-gap: 20px;
+  flex-wrap: wrap;
+  width: 100%;
+  margin: 20px 0;
+}
+
+checkbox {
+  background-color: var(--dark-red);
+}
+
+#description {
+  height: 80px;
+}
+
+#description ::placeholder {
+  font-family: "Montserrat", sans-serif;
+}
+
+#submit-btn,
+#search-btn,
+#add-btn,
+#families-btn,
+#edit-btn,
+#delete-btn,
+#save-btn,
+#close-dialog-btn {
+  margin: 40px auto;
+  cursor: pointer;
+}
+
+#specialRequests,
+#experience {
+  height: 50px;
+}
+
+input[type="checkbox"] {
+  accent-color: var(--dark-red);
+}
+
+#family-title {
+  font-family: var(--festive-font);
+  font-size: 2rem;
+  color: black;
+  grid-area: title;
+}
+
+#preferances-results {
+  color: var(--dark-red);
+  display: grid;
+  margin: 0;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, auto);
+  gap: 10px;
+  grid-area: preferances;
+}
+
+#preferances-results p {
+  margin: 0;
+}
+
+#family-picture {
+  width: 250px;
+  height: 170px;
+
+  grid-area: image;
+}
+
+#family-info-container-small {
+  display: grid;
+  grid-template-columns: 65% 35%;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas:
+    "title  image"
+    "preferances image";
+  gap: 20px;
+  margin: 20px 0;
+  width: 80%;
+}
+
+a {
+  text-decoration: none;
 }
 
 .family-card {
-  background: #808080;
-  color: #9d1717;
-  width: fit-content;
+  color: var(--dark-red);
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 10px auto;
+  text-align: center;
 }
 
-#edit-family-form {
-  display: flex;
-  flex-direction: column;
-  width: 650px;
-  gap: 10px;
-  padding: 20px;
+#onerem {
+  font-size: 1rem;
 }
 
-#families {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+.grey-button {
+  background-color: #77757584;
+}
+
+dialog[open] {
+  display: block;
+}
+
+#family-picture-dialog {
+  width: 300px;
+  height: 220px;
+  transition: transform 0.2s linear;
+  cursor: pointer;
+}
+
+#family-picture-dialog.zoomed {
+  transform: scale(2) translateX(150px) translateY(-100px);
+}
+
+#family-title-dialog {
+  font-family: var(--festive-font);
+  font-size: 2rem;
+}
+
+.p-dialog {
+  color: var(--dark-red);
+}
+
+#family-name-dialog {
+  font-weight: 700;
+  font-size: 1.5rem;
 }

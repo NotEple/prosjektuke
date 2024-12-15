@@ -3,113 +3,80 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" href="../images/christmas-tree.png" type="image/x-icon" />
-
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Big+Shoulders+Display:wght@100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Karla:ital,wght@0,200..800;1,200..800&family=Lexend+Deca:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Ms+Madi&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Rubik:ital,wght@0,300..900;1,300..900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap"
-      rel="stylesheet"
-    />
-
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Big+Shoulders+Display:wght@100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Karla:ital,wght@0,200..800;1,200..800&family=Lexend+Deca:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Rubik:ital,wght@0,300..900;1,300..900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap"
-      rel="stylesheet"
-    />
-
-    <link rel="stylesheet" href="../style.css" />
-    <title>Individual</title>
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/style.css" />
   </head>
+
   <body id="individual-form">
-    <form action="#" method="post">
-      <h2>
-        Share a few details about yourself so we can find the best match for
-        you!
-      </h2>
+    <nav style="margin-left: auto; display: flex">
+      <ul>
+        <li style="list-style: none">
+          <a href="./admin-panel.html">Admin</a>
+        </li>
+      </ul>
+    </nav>
+    <div id="search-container">
+      <form action="/search" method="GET">
+        <label for="experience">What Are You Looking For</label>
+        <textarea
+          rows="3"
+          id="experience"
+          name="experience"
+          placeholder="Describe the kind of family environment experience you are hoping for."
+          required
+        ></textarea>
 
-      <label for="name">Your Name</label>
-      <input
-        type="text"
-        id="name"
-        name="name"
-        placeholder="What's your name?"
-        required
-      />
+        <fieldset class="checkbox-group">
+          <legend>Your Preferences</legend>
+          <label
+            ><input
+              class="filter-family-properties"
+              type="checkbox"
+              id="filterPetsAllowed"
+              name="petsAllowed"
+            />
+            I have a pet</label
+          >
 
-      <label for="status">Your Status</label>
-      <textarea
-        id="status"
-        name="status"
-        placeholder="Share your situation (e.g., single parent, elderly, or other)"
-        rows="3"
-        required
-      ></textarea>
+          <label
+            ><input
+              class="filter-family-properties"
+              type="checkbox"
+              id="filterSmokingAllowed"
+              name="smokingAllowed"
+            />
+            I am smoking</label
+          >
 
-      <label for="location">Your Location</label>
-      <input
-        type="text"
-        id="location"
-        name="location"
-        placeholder="Where are you located?"
-        required
-      />
+          <label
+            ><input
+              class="filter-family-properties"
+              type="checkbox"
+              id="filterVeganFriendly"
+              name="veganFriendly"
+            />
+            I am vegan</label
+          >
 
-      <label for="email">E-mail Address</label>
-      <input
-        type="email"
-        id="email"
-        name="email"
-        placeholder="What's your email address?"
-        required
-      />
+          <label
+            ><input
+              class="filter-family-properties"
+              type="checkbox"
+              id="filterOvernightStay"
+              name="overnightStay"
+            />
+            I would like to stay over</label
+          >
+        </fieldset>
 
-      <label for="languages">Languages</label>
-      <input
-        type="text"
-        id="languages"
-        name="languages"
-        placeholder="What languages do you speak?"
-        required
-      />
+        <button id="search-btn" type="button">Search</button>
+      </form>
+    </div>
 
-      <label for="experience">What Are You Looking For</label>
-      <textarea
-        id="experience"
-        name="experience"
-        placeholder="Describe the kind of family environment experience you are hoping for."
-        rows="4"
-        required
-      ></textarea>
+    <div class="family-info-container" id="family-info-container"></div>
 
-      <label for="specialRequests">Special Requests</label>
-      <textarea
-        id="specialRequests"
-        name="specialRequests"
-        placeholder="Is there anything the family should know? (e.g., 'I have a nut allergy', 'I mostly eat vegan food')"
-        rows="3"
-      ></textarea>
+    <div id="dialog-container"></div>
 
-      <fieldset>
-        <legend>Your Preferences</legend>
-        <label
-          ><input type="checkbox" name="pet" value="yes" /> I have a pet</label
-        ><br />
-        <label
-          ><input type="checkbox" name="smoking" value="yes" /> I am
-          smoking</label
-        ><br />
-        <label
-          ><input type="checkbox" name="vegan" value="yes" /> I am vegan</label
-        ><br />
-        <label
-          ><input type="checkbox" name="overnightStay" value="yes" /> I would
-          like to stay over</label
-        >
-      </fieldset>
-
-      <button type="submit">Search</button>
-    </form>
+    <script src="../js/index.js" defer></script>
   </body>
 </html>

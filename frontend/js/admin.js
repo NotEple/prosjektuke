@@ -42,6 +42,7 @@ newFamilyForm.addEventListener("submit", (e) => {
   formData.append("family_properties", JSON.stringify(familyProperties));
 
   newFamily(formData);
+  newFamilyForm.reset();
 });
 
 // ? Creates a new family by taking a body as paremeter
@@ -80,17 +81,16 @@ function renderFamilies() {
     (family) =>
       (families.innerHTML += `<div class="family-${family.family_id} family-card">
                                 <div>
-                                  <p>${family.family_name}</p>
-                                  <p>${family.family_title}</p>
-                                  <img style="width: 5%;" src="${family.family_picture}" />
+                                  <p class="family-card" >${family.family_name}</p>
+                                  <p class="family-card" id="onerem">${family.family_title}</p>
+                                  <img class="family-card" style="width: 20%;" src="${family.family_picture}" />
                                 </div>
-                                <button id="editBtn" onclick="editFamilyById(${family.family_id})" type="button">Edit</button>
-                                <button id="delBtn" onclick="deleteFamily(${family.family_id})" type="button">Delete</button>
+                               
+                                <button class="family-card grey-button" id="onerem" onclick="editFamilyById(${family.family_id})" type="button">Edit</button>
+                             
+                              <button class="family-card grey-button" id="onerem" onclick="deleteFamily(${family.family_id})" type="button">Delete</button>
                               </div>`)
   );
-  document.addEventListener("DOMContentLoaded", () => {
-    getFamilies();
-  });
 }
 
 // ? Delete a family by id
@@ -116,7 +116,7 @@ async function getFamilyById(id) {
     const res = await req.json();
     return res;
   } catch (error) {
-    console.error(error);
+    console.log(error);
   }
 }
 
@@ -142,7 +142,7 @@ async function editFamilyById(id) {
   familyId = id;
   const family = await getFamilyById(id);
 
-  editFamilyDialog.style.display = "block";
+  editFamilyDialog.showModal();
 
   document.getElementById("family_name").value = family.family_name;
   document.getElementById("family_title").value = family.family_title;
@@ -186,56 +186,13 @@ async function editFamily(body) {
       throw new Error("Failed to update family object");
     }
     console.log("Family updated successfully!");
+
+    editFamilyDialog.close();
   } catch (error) {
-    console.error("Error updating family:", error);
+    console.log("Error updating family:", error);
   }
 }
 
-const search = document.getElementById("search");
-const searchResults = document.getElementById("search-results");
-
-const filterFamiliesProperties = document.querySelectorAll(
-  ".filter-family-properties"
-);
-let debounceTimeout;
-
-let searchResultsArray = [];
-
-checkboxes.forEach((checkbox) => {
-  const propertyName = checkbox.getAttribute("name");
-
-  checkbox.checked = family.family_properties[propertyName] || false;
-
-  editFamilyProperties[propertyName] = checkbox.checked;
-
-  checkbox.addEventListener("change", () => {
-    editFamilyProperties[propertyName] = checkbox.checked;
-  });
-});
-
-search.addEventListener("keydown", (e) => {
-  clearTimeout(debounceTimeout);
-
-  console.log(e.key);
-
-  debounceTimeout = setTimeout(async () => {
-    try {
-      const req = await fetch(
-        `http://localhost:3000/families?value=${e.target.value}`
-      );
-      const res = await req.json();
-
-      searchResultsArray = res;
-
-      console.log(res);
-
-      // searchResultsArray.forEach(
-      //   (family) =>
-      //     (searchResults.innerHTML += `<div>${family.family_description}</div>`)
-      // );
-    } catch (error) {
-      console.log(error);
-    } finally {
-    }
-  }, 1000);
+document.addEventListener("DOMContentLoaded", () => {
+  getFamilies();
 });

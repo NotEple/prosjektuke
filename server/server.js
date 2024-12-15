@@ -90,7 +90,6 @@ app.get("/families", (req, res) => {
 // ? GET REQUEST BY ID - Get a specific family
 app.get("/families/:id", (req, res) => {
   const families = loadFamilies();
-  const familyId = families[req.params.id];
 
   const filteredFamilies = families.find(
     (family) => family.family_id === Number(req.params.id)
@@ -98,7 +97,7 @@ app.get("/families/:id", (req, res) => {
 
   if (!filteredFamilies) res.status(404).json({ message: "Family not found" });
 
-  res.send(familyId);
+  res.send(filteredFamilies);
 });
 
 // ? PUT REQUEST - Edit a family by id
