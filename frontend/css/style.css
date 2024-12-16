@@ -337,10 +337,7 @@ dialog[open] {
 dialog {
   width: 80%;
   background-color: var(--cold-blue);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+
 }
 
 #message {
