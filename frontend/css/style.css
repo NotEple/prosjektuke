@@ -19,7 +19,8 @@ body {
 }
 
 #individual-form,
-#family-form {
+#family-form,
+#admin-page {
   background-image: url("../images/bg-individual.jpg");
   background-repeat: repeat-y;
   display: flex;
@@ -73,9 +74,15 @@ a {
 }
 
 h1,
+h2,
 h3,
 a {
   color: var(--dark-red);
+}
+
+h2 {
+  font-family: var(--festive-font);
+  font-size: 3rem;
 }
 
 #last-line {
@@ -85,7 +92,10 @@ a {
 
 #family-container,
 #search-container,
-#family-info-container {
+.family-info-container,
+#admin-container,
+#edit-container,
+.family-info-container-small {
   display: flex;
   background-color: var(--cold-blue);
   opacity: 90%;
@@ -121,11 +131,10 @@ textarea {
   border-radius: 16px;
 }
 
-fieldset {
-  width: 100%;
-}
-
-form {
+form,
+.form-model,
+#edit-family-form,
+#edit-family {
   width: 90%;
 }
 
@@ -154,7 +163,7 @@ button:hover {
   color: var(--cold-blue);
 }
 
-fieldset {
+.checkbox-group {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -162,6 +171,8 @@ fieldset {
   align-content: flex-start;
   row-gap: 20px;
   flex-wrap: wrap;
+  width: 100%;
+  margin: 20px 0;
 }
 
 checkbox {
@@ -177,8 +188,15 @@ checkbox {
 }
 
 #submit-btn,
-#search-btn {
+#search-btn,
+#add-btn,
+#families-btn,
+#edit-btn,
+#delete-btn,
+#save-btn,
+#close-dialog-btn {
   margin: 40px auto;
+  cursor: pointer;
 }
 
 #specialRequests,
@@ -218,64 +236,63 @@ input[type="checkbox"] {
   grid-area: image;
 }
 
-#family-info-container {
+#family-info-container-small {
   display: grid;
   grid-template-columns: 65% 35%;
   grid-template-rows: 1fr 1fr;
   grid-template-areas:
     "title  image"
     "preferances image";
+  gap: 20px;
+  margin: 20px 0;
+  width: 80%;
 }
 
 a {
   text-decoration: none;
 }
 
-/* ! ALL FAMILY CONTAINER HAS TO BE CLASS */
-.family-info-container {
-  display: flex;
-  background-color: var(--cold-blue);
-  opacity: 90%;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  border-radius: 16px;
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-  width: 950px;
-  margin: 100px auto;
-  padding: 30px;
-  display: grid;
-  grid-template-columns: 65% 35%;
-  grid-template-rows: 1fr 1fr;
-  grid-template-areas:
-    "title  image"
-    "preferances image";
+.family-card {
+  color: var(--dark-red);
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 10px auto;
+  text-align: center;
 }
 
-.family-title {
+#onerem {
+  font-size: 1rem;
+}
+
+.grey-button {
+  background-color: #77757584;
+}
+
+dialog[open] {
+  display: block;
+}
+
+#family-picture-dialog {
+  width: 300px;
+  height: 220px;
+  transition: transform 0.2s linear;
+  cursor: pointer;
+}
+
+#family-picture-dialog.zoomed {
+  transform: scale(2) translateX(150px) translateY(-100px);
+}
+
+#family-title-dialog {
   font-family: var(--festive-font);
   font-size: 2rem;
-  color: black;
-  grid-area: title;
 }
 
-.preferences-results {
+.p-dialog {
   color: var(--dark-red);
-  display: grid;
-  margin: 0;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(2, auto);
-  gap: 10px;
-  grid-area: preferances;
 }
 
-.preferences-results p {
-  margin: 0;
-}
-
-.family-picture {
-  width: 250px;
-  height: 170px;
-
-  grid-area: image;
+#family-name-dialog {
+  font-weight: 700;
+  font-size: 1.5rem;
 }

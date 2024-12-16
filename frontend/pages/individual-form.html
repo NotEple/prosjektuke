@@ -3,17 +3,18 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="icon"
-      href="../../images/christmas-tree.png"
-      type="image/x-icon"
-    />
-
     <title>Document</title>
     <link rel="stylesheet" href="../css/style.css" />
   </head>
 
   <body id="individual-form">
+    <nav style="margin-left: auto; display: flex">
+      <ul>
+        <li style="list-style: none">
+          <a href="./admin-panel.html">Admin</a>
+        </li>
+      </ul>
+    </nav>
     <div id="search-container">
       <form method="GET" id="form">
         <label for="experience">What Are You Looking For</label>
@@ -24,38 +25,57 @@
           placeholder="Describe the kind of family environment experience you are hoping for."
         ></textarea>
 
-        <fieldset id="checkbox-group">
+        <fieldset class="checkbox-group">
           <legend>Your Preferences</legend>
           <label
-            ><input type="checkbox" name="IHavepet" class="checkbox" /> I have a
-            pet</label
-          >
-
-          <label
-            ><input type="checkbox" name="IAmsmoking" class="checkbox" /> I am
-            smoking</label
-          >
-
-          <label
-            ><input type="checkbox" name="IAmvegan" class="checkbox" /> I am
-            vegan</label
+            ><input
+              class="filter-family-properties"
+              type="checkbox"
+              id="filterPetsAllowed"
+              name="petsAllowed"
+            />
+            I have a pet</label
           >
 
           <label
             ><input
+              class="filter-family-properties"
               type="checkbox"
-              name="IWantovernightStay"
-              class="checkbox"
+              id="filterSmokingAllowed"
+              name="smokingAllowed"
+            />
+            I am smoking</label
+          >
+
+          <label
+            ><input
+              class="filter-family-properties"
+              type="checkbox"
+              id="filterVeganFriendly"
+              name="veganFriendly"
+            />
+            I am vegan</label
+          >
+
+          <label
+            ><input
+              class="filter-family-properties"
+              type="checkbox"
+              id="filterOvernightStay"
+              name="overnightStay"
             />
             I would like to stay over</label
           >
         </fieldset>
 
-        <button id="search-btn">Search</button>
+        <button id="search-btn" type="button">Search</button>
       </form>
     </div>
 
-    <div id="families-container"></div>
-    <script src="../main.js"></script>
+    <div class="family-info-container" id="family-info-container"></div>
+
+    <div id="dialog-container"></div>
+
+    <script src="../js/index.js" defer></script>
   </body>
 </html>
