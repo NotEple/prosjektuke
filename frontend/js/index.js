@@ -14,31 +14,6 @@ async function getFamilies() {
   }
 }
 
-function renderFilteredFamilies() {
-  const hasPet = document.querySelector('input[name="petsAllowed"]').checked;
-  const isSmoking = document.querySelector(
-    'input[name="smokingAllowed"]'
-  ).checked;
-  const isVegan = document.querySelector('input[name="veganFriendly"]').checked;
-  const wantsOvernightStay = document.querySelector(
-    'input[name="overnightStay"]'
-  ).checked;
-
-  const filteredFamilies = familiesArray.filter((family) => {
-    return (
-      (hasPet === false || family.family_properties.petsAllowed === hasPet) &&
-      (isSmoking === false ||
-        family.family_properties.smokingAllowed === isSmoking) &&
-      (isVegan === false ||
-        family.family_properties.veganFriendly === isVegan) &&
-      (wantsOvernightStay === false ||
-        family.family_properties.overnightStay === wantsOvernightStay)
-    );
-  });
-
-  displayFamilies(filteredFamilies);
-}
-
 function displayFamilies(families) {
   const familyInfoContainer = document.getElementById("family-info-container");
 
@@ -85,7 +60,7 @@ function displayFamilies(families) {
   }
 }
 
-document.addEventListener("click", function (event) {
+document.addEventListener("click", (event) => {
   if (event.target && event.target.classList.contains("view-details-btn")) {
     const familyId = event.target.closest("#family-info-container-small")
       .dataset.familyId;
@@ -140,11 +115,50 @@ function openFamilyDetails(familyId) {
   });
 }
 
-document
-  .getElementById("search-btn")
-  .addEventListener("click", function (event) {
-    event.preventDefault();
-    renderFilteredFamilies();
+document.getElementById("search-btn").addEventListener("click", (event) => {
+  event.preventDefault();
+  filteredFamilies(filterParams);
+});
+
+let filterParams = {};
+
+const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+
+checkboxes.forEach((checkbox) => {
+  let name = checkbox.name;
+  filterParams[name] = checkbox.checked;
+
+  checkbox.addEventListener("change", () => {
+    filterParams[name] = checkbox.checked;
+    searchParams(filterParams);
+  });
+});
+
+function searchParams(object) {
+  let params = [];
+  Object.entries(object).forEach(([key, value]) => {
+    if (value === true) {
+      params = [...params, key];
+      return;
+    }
   });
 
-getFamilies();
+  return params.length > 1 ? params.join("&") : params;
+}
+
+async function filteredFamilies(filters) {
+  try {
+    const request = await fetch(
+      `http://localhost:3000/families?${searchParams(filters)}`
+    );
+    console.log(request);
+    const response = await request.json();
+    familiesArray = response;
+    displayFamilies(familiesArray);
+    console.log(familiesArray);
+  } catch (error) {
+    throw new Error("There was an error:", error);
+  }
+}
+
+window.onload = getFamilies;
