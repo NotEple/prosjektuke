@@ -124,10 +124,27 @@ function openFamilyDetails(familyId) {
     <img id="family-picture-dialog" src="${
       family.family_picture
     }" alt="family picture" />
+<div id="message-form">
+       
+<h2>Send a message directly to the family <h2>
+      <textarea id="message" placeholder="Write your message here..." required></textarea>
+      <button type="submit" id="send-message-btn">Send Message</button> 
+ <input id="date-dialog" type="date" />
+    <button id="book-btn" >Book here</button>
+     
+</div>
     <button id="close-dialog-btn" class="close-dialog-btn">Close</button>
   `;
   document.body.appendChild(dialog);
   dialog.showModal();
+
+  document
+    .getElementById("send-message-btn")
+    .addEventListener("click", function () {
+      const messageField = document.getElementById("message");
+
+      messageField.value = "";
+    });
 
   dialog.querySelector(".close-dialog-btn").addEventListener("click", () => {
     dialog.close();
