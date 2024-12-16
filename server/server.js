@@ -65,9 +65,7 @@ app.post("/families", upload.single("family_picture"), (req, res) => {
 app.get("/families", (req, res) => {
   const families = loadFamilies();
 
-  const {
-    query, // Destructure query from req
-  } = req;
+  const { query } = req;
 
   // If no query parameters, return all families
   if (!Object.keys(query).length) {
@@ -78,7 +76,7 @@ app.get("/families", (req, res) => {
   const filteredFamilies = families.filter((family) => {
     return Object.entries(query).every(([key, value]) => {
       if (key === "value") {
-        return family.family_description.includes(value);
+        return family.family_description.toLowerCase().includes(value);
       }
       return family.family_properties[key];
     });
