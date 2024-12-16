@@ -130,34 +130,56 @@ checkboxes.forEach((checkbox) => {
 
   checkbox.addEventListener("change", () => {
     filterParams[name] = checkbox.checked;
-    searchParams(filterParams);
   });
 });
 
-function searchParams(object) {
+function getQueryparamsFromFilter(object) {
   let params = [];
   Object.entries(object).forEach(([key, value]) => {
     if (value === true) {
-      params = [...params, key];
-      return;
+      params.push(key);
     }
   });
 
-  return params.length > 1 ? params.join("&") : params;
+  return params.length > 0 ? params.join("&") : "";
 }
 
-async function filteredFamilies(filters) {
+const searchArea = document.getElementById("search");
+let searchValue = "";
+
+searchArea.addEventListener("keyup", (e) => {
+  if (e.key === "Enter") {
+    filteredFamilies(filterParams);
+  }
+  searchValue = e.target.value.toLowerCase();
+});
+
+function returnSearchParams(searchValue, filterParams) {
+  const searchParamString = getQueryparamsFromFilter(filterParams);
+  let queryString = "";
+
+  if (searchValue && searchParamString) {
+    queryString = `value=${searchValue}&${searchParamString}`;
+  } else if (searchValue) {
+    queryString = `value=${searchValue}`;
+  } else if (searchParamString) {
+    queryString = searchParamString;
+  }
+
+  return queryString;
+}
+
+async function filteredFamilies() {
+  const search = returnSearchParams(searchValue, filterParams);
+
   try {
-    const request = await fetch(
-      `http://localhost:3000/families?${searchParams(filters)}`
-    );
-    console.log(request);
+    const request = await fetch(`http://localhost:3000/families?${search}`);
     const response = await request.json();
-    familiesArray = response;
+    const familiesArray = response;
     displayFamilies(familiesArray);
     console.log(familiesArray);
   } catch (error) {
-    throw new Error("There was an error:", error);
+    console.error("There was an error:", error);
   }
 }
 
