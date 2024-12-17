@@ -115,7 +115,10 @@ app.put("/families/:id", upload.single("family_picture"), (req, res) => {
     ""
   );
 
-  if (file.filename !== families[familyIndex].family_picture) {
+  if (
+    body.family_picture ||
+    file.filename !== families[familyIndex].family_picture
+  ) {
     console.log(`Deleting old image:${filename}`);
     fs.unlinkSync(__dirname + "/server/uploads/" + filename);
   }
