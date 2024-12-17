@@ -99,10 +99,10 @@ app.get("/families/:id", (req, res) => {
 });
 
 // ? PUT REQUEST - Edit a family by id
-app.put("/families/:id", (req, res) => {
-  const families = loadFamilies();
+app.put("/families/:id", upload.single("family_picture"), (req, res) => {
+  const { file, body } = req;
 
-  const updatedFamilyObject = req.body;
+  const families = loadFamilies();
 
   const familyId = Number(req.params.id);
 
@@ -110,13 +110,34 @@ app.put("/families/:id", (req, res) => {
     (family) => family.family_id === familyId
   );
 
+  const filename = families[familyIndex].family_picture.replace(
+    "http://localhost:3000/uploads/",
+    ""
+  );
+
+  if (file.filename !== families[familyIndex].family_picture) {
+    console.log(`Deleting old image:${filename}`);
+    fs.unlinkSync(__dirname + "/server/uploads/" + filename);
+  }
+
+  const editedFamilyObj = {
+    family_id: currentId,
+    family_name: body.family_name,
+    family_title: body.family_title,
+    family_description: body.family_description,
+    family_picture: file
+      ? `http://localhost:3000/uploads/${file.filename}`
+      : req.body.family_picture,
+    family_properties: JSON.parse(body.family_properties),
+  };
+
   if (familyIndex === -1) {
     res.status(404).json({ message: "Family not found" });
   }
 
   families[familyIndex] = {
     ...families[familyIndex],
-    ...updatedFamilyObject,
+    ...editedFamilyObj,
     family_id: familyId,
   };
 
@@ -129,10 +150,20 @@ app.put("/families/:id", (req, res) => {
 app.delete("/families/:id", (req, res) => {
   let families = loadFamilies();
   if (req.params.id) {
-    families = families.filter(
+    const deleteFamily = (families = families.filter(
       (del) => del.family_id !== Number(req.params.id)
+    ));
+
+    fs.unlinkSync(
+      __dirname +
+        "/server/uploads/" +
+        families[req.params.id].family_picture.replace(
+          "http://localhost:3000/uploads/",
+          ""
+        )
     );
-    saveFamilies(families);
+
+    saveFamilies(deleteFamily);
     res.status(200).sendStatus(200);
   }
 });
