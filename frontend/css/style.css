@@ -296,3 +296,7 @@ dialog[open] {
   font-weight: 700;
   font-size: 1.5rem;
 }
+
+#family_picture_url {
+  width: 250px;
+}
