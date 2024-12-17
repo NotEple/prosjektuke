@@ -4,7 +4,7 @@
     "family_name": "The Evergreens",
     "family_title": " Holiday Enthusiasts",
     "family_description": "The Evergreen family is a young, vibrant couple who absolutely adore the holiday season. With their joyful 4-year-old daughter, they fill their home with festive decorations, baking sessions, and heartwarming traditions. They can’t wait to share their love for Christmas and spread joy to someone new this year.",
-    "family_picture": "http://localhost:3000/uploads/6ebfc1127ef711ce351a56817753f21a",
+    "family_picture": "http://localhost:3000/uploads/593dc7fa75bdc236c7a78952fc6529ec",
     "family_properties": {
       "smokingAllowed": true,
       "petsAllowed": true,
@@ -17,7 +17,7 @@
     "family_name": "The Hendersons",
     "family_title": "The Big Hearth Family",
     "family_description": "We are the Hendersons, a big, warm family who loves spending the holidays together. Our family includes parents, three sisters, one brother, and their partners—and one of us is a proud single! This year, we’re also celebrating with our little bundle of joy, the newest member of the family. Our home is full of love, laughter, and holiday cheer, and we’d love to share it with you.",
-    "family_picture": "http://localhost:3000/uploads/371d167de3570dfb057d0a03a71f9376",
+    "family_picture": "http://localhost:3000/uploads/a8f37130bec9bb443324d7b5045cf37a",
     "family_properties": {
       "smokingAllowed": true,
       "petsAllowed": true,
@@ -30,7 +30,7 @@
     "family_name": "The Millers",
     "family_title": "The Cozy Paws Family",
     "family_description": "We are the Millers—a loving family with two amazing kids: our responsible older son and our playful younger daughter. Completing our family is our adorable dog, who brings endless joy and cuddles. We cherish the holidays and can’t wait to share our cozy traditions and festive spirit with you!",
-    "family_picture": "http://localhost:3000/uploads/80565e5ae9e9bf35a5e71bd240e155ac",
+    "family_picture": "http://localhost:3000/uploads/65a3d2f31288f005f8a7431d003a0ec3",
     "family_properties": {
       "smokingAllowed": false,
       "petsAllowed": true,
@@ -43,7 +43,7 @@
     "family_name": "The Parkers",
     "family_title": "The Bookworms Family",
     "family_description": "We are the Parkers, a family that loves to spend time together with books in hand. Our older daughter and younger son are passionate readers, often lost in their favorite stories. We cherish the quiet moments of reading, but also love celebrating the holiday season with warmth, laughter, and festive traditions. Our home is ready to share its love of books and family with you this Christmas.",
-    "family_picture": "http://localhost:3000/uploads/c2ca26a48141feb20ef1b3fcb9deba67",
+    "family_picture": "http://localhost:3000/uploads/e0a4b87d801c6962453d92252407ebc0",
     "family_properties": {
       "smokingAllowed": true,
       "petsAllowed": true,
@@ -56,9 +56,9 @@
     "family_name": "The Johnsons",
     "family_title": "The Heart & Soul Family",
     "family_description": " We are the Johnsons, a tight-knit Afro-American family full of love and life. Two sisters, along with their husbands and children, make our family complete. We celebrate the beauty of togetherness, family traditions, and the joy that comes from spending time with one another. This holiday season, we’re excited to open our hearts and home to someone new and share the warmth of our family spirit.",
-    "family_picture": "http://localhost:3000/uploads/f82ef1fb319d5e1192402c33880c8bc4",
+    "family_picture": "http://localhost:3000/uploads/a8cd48c2e2df8f5350214728bb9dc49c",
     "family_properties": {
-      "smokingAllowed": true,
+      "smokingAllowed": false,
       "petsAllowed": true,
       "overnightStay": true,
       "veganFriendly": true
@@ -69,7 +69,7 @@
     "family_name": "The Lê Family",
     "family_title": "The Joyful Garden Family",
     "family_description": " We are the Lê family, a warm and welcoming household with two beautiful daughters. Our home is filled with laughter, love, and the rich traditions of Vietnam. We enjoy spending time together, whether it’s cooking, celebrating holidays, or simply sharing stories. This holiday season, we would love to invite someone special into our family circle to celebrate the joys of togetherness.",
-    "family_picture": "http://localhost:3000/uploads/14570340955fd8f889c5bab7c6d9472d",
+    "family_picture": "http://localhost:3000/uploads/8c55ad70b3f1f262366cf453f8e61643",
     "family_properties": {
       "smokingAllowed": false,
       "petsAllowed": true,
@@ -82,7 +82,7 @@
     "family_name": "The Kowalskis",
     "family_title": "The Fun-loving Family",
     "family_description": "We are the Kowalskis, a fun-loving family that knows how to laugh and enjoy life! With grandparents, parents, and two lively granddaughters, our home is always filled with jokes, games, and happy chaos. We love sharing moments of joy, celebrating traditions, and creating memories. This holiday season, we’d love to invite someone special to join in the laughter and warmth of our family celebrations.",
-    "family_picture": "http://localhost:3000/uploads/475b0fbfbb8e565cde030fbf7cc74d7d",
+    "family_picture": "http://localhost:3000/uploads/106d6900adf7ae53ac624a0e3920a51a",
     "family_properties": {
       "smokingAllowed": false,
       "petsAllowed": true,
@@ -95,7 +95,7 @@
     "family_name": "The Martins",
     "family_title": "The Little Bundle Family",
     "family_description": "We are a young family, filled with excitement and love for our little one. Our baby has brought a whole new level of joy to our home, and we can’t wait to share our cozy, heartwarming traditions with someone this holiday season. From our growing family to yours, we look forward to welcoming you into our festive celebrations.",
-    "family_picture": "http://localhost:3000/uploads/3c57042388d6d8dc5851c9adc058612a",
+    "family_picture": "http://localhost:3000/uploads/b534979a168d73832b8046b24e69e7f3",
     "family_properties": {
       "smokingAllowed": false,
       "petsAllowed": true,
@@ -108,11 +108,11 @@
     "family_name": "TheClarks",
     "family_title": "The Cozy Duo",
     "family_description": "This year, we are a small but joyful family—just the two of us and our beloved dog. Though we'll be spending the holidays together on our own, our home will be filled with warmth, love, and lots of puppy cuddles. We’re looking forward to making this Christmas special and sharing our peaceful, cozy traditions with someone who might need a little extra holiday cheer.",
-    "family_picture": "http://localhost:3000/uploads/5de9f1a85487b2d07f1cfe9435df2123",
+    "family_picture": "http://localhost:3000/uploads/1095f34cd26aafe295e5d9cb1c780344",
     "family_properties": {
       "smokingAllowed": true,
       "petsAllowed": true,
-      "overnightStay": true,
+      "overnightStay": false,
       "veganFriendly": true
     }
   },
@@ -121,12 +121,12 @@
     "family_name": "The Adams",
     "family_title": "The Outdoor Experts",
     "family_description": "We are the Adams family, and we love spending time outside! Whether it’s hiking, biking, or just enjoying the fresh air, we always make the most of nature’s beauty. Our family is all about adventure and togetherness, and we’d love to share our love for the outdoors and the holidays with someone special this season.",
-    "family_picture": "http://localhost:3000/uploads/f0f52e330c942160cb93380c6b7070f3",
+    "family_picture": "http://localhost:3000/uploads/91b101f1228fdc591ae686ec7a5ea7e9",
     "family_properties": {
       "smokingAllowed": true,
       "petsAllowed": true,
       "overnightStay": false,
-      "veganFriendly": true
+      "veganFriendly": false
     }
   },
   {
@@ -134,11 +134,11 @@
     "family_name": "The Trumps",
     "family_title": "The Sweet Treats Family",
     "family_description": "We are a family that truly enjoys baking together! Mom loves to bake, and her son and daughter are always there to help—whether it’s mixing the dough or decorating cookies. Our home is filled with the delicious smells of fresh treats and the joy of spending time as a family. This holiday season, we’re excited to share our passion for baking and the warmth of our home with someone new.",
-    "family_picture": "http://localhost:3000/uploads/aac691053953733be1e7eb94b8bf6a31",
+    "family_picture": "http://localhost:3000/uploads/9c06916b572a2c28e65ea1dded5e0bc8",
     "family_properties": {
       "smokingAllowed": false,
       "petsAllowed": false,
-      "overnightStay": false,
+      "overnightStay": true,
       "veganFriendly": true
     }
   },
@@ -147,7 +147,7 @@
     "family_name": "The Parkers",
     "family_title": "The Loving Home Family",
     "family_description": "We are the Parkers, a proud and loving family with two adopted children. Our home is a place of acceptance, joy, and warmth, where we celebrate love in all its forms. Together, we cherish the small moments, the big milestones, and the holidays, and we’d love to welcome someone new to share in our festive traditions and family spirit.",
-    "family_picture": "http://localhost:3000/uploads/e58cb8a05ae7745488decf47d3132bce",
+    "family_picture": "http://localhost:3000/uploads/7264d515826a328aca523695157dbd1b",
     "family_properties": {
       "smokingAllowed": true,
       "petsAllowed": false,
@@ -160,7 +160,7 @@
     "family_name": "The Wilsons",
     "family_title": "The Picnic Lovers",
     "family_description": "We are the Wilsons, a fun-loving family that treasures picnic days! Whether it’s in the park, by the lake, or in our own backyard, we love spending time together outdoors, enjoying delicious food and each other’s company. This holiday season, we’d love to share the warmth of our family and our love for simple joys with someone special.",
-    "family_picture": "http://localhost:3000/uploads/e931fee010092afd8763fd7bf0c7dffa",
+    "family_picture": "http://localhost:3000/uploads/0c84c9f39319d8a2595a8de781275542",
     "family_properties": {
       "smokingAllowed": false,
       "petsAllowed": false,
@@ -173,7 +173,7 @@
     "family_name": "The Murphies",
     "family_title": "The Tech-Savvy Crew",
     "family_description": "We are  a family of tech enthusiasts who love solving problems and discovering new gadgets. With a son who shares our passion for all things tech, our home is filled with innovation and creativity. We may be a bit gadget-obsessed, but we’re also big on family traditions and holiday cheer. This season, we’re excited to share our home and our love for technology with someone special.",
-    "family_picture": "http://localhost:3000/uploads/79187139ec81e5f9e2028c863bd43882",
+    "family_picture": "http://localhost:3000/uploads/7243e76f071b63f47749c17188b14efd",
     "family_properties": {
       "smokingAllowed": false,
       "petsAllowed": true,
@@ -186,7 +186,7 @@
     "family_name": "The Thompsons",
     "family_title": "The Rock 'n' Roll Family",
     "family_description": "We are the Thompsons, a fun and lively family with two little boys who love to rock out to dad’s music. When dad isn’t playing in his rock band, we spend our time together making memories and sharing music-filled moments. Our home is always buzzing with energy, and we can’t wait to share the joy of our family and holiday traditions with someone special this season.",
-    "family_picture": "http://localhost:3000/uploads/a2000d887f2d90fe645b457154ebd76a",
+    "family_picture": "http://localhost:3000/uploads/ff8196220af3b49328f4db729c8b6723",
     "family_properties": {
       "smokingAllowed": false,
       "petsAllowed": true,
@@ -199,7 +199,7 @@
     "family_name": "The Wangs",
     "family_title": "The Harmony family",
     "family_description": "We are the Wang family, a vibrant and loving household with three wonderful children. Our home is filled with laughter, joy, and the rich traditions of our Chinese heritage. We cherish time spent together, whether it's celebrating holidays, cooking family meals, or sharing stories. This holiday season, we’d love to open our doors and hearts to someone special to join in our festive traditions.",
-    "family_picture": "http://localhost:3000/uploads/a3f548a2729f77a2efbc0f2d5c76b7a7",
+    "family_picture": "http://localhost:3000/uploads/badc2dd28f1bce03a46a166b78f1f92e",
     "family_properties": {
       "smokingAllowed": true,
       "petsAllowed": true,
@@ -212,7 +212,7 @@
     "family_name": "The Ionescus",
     "family_title": "The Heartfelt Family",
     "family_description": "We are the Ionescu family, a warm and close-knit family from Romania. Our home is filled with laughter, love, and the beautiful traditions that have been passed down through generations. We enjoy spending time together, whether it’s cooking, celebrating the holidays, or simply sharing stories. This holiday season, we’re excited to share our festive spirit and family warmth with someone special.",
-    "family_picture": "http://localhost:3000/uploads/7fc4b42499b1fe5d4105e0c2a55dd69f",
+    "family_picture": "http://localhost:3000/uploads/80d9d467f0f6cd9bf82093e6b6ee3ee6",
     "family_properties": {
       "smokingAllowed": true,
       "petsAllowed": true,
@@ -225,7 +225,7 @@
     "family_name": "The Silvas",
     "family_title": "The Festive Family",
     "family_description": "We are the Silva family, full of energy, joy, and love, just like the spirit of Brazil! Our home is always filled with laughter, music, and dancing. We love celebrating holidays with vibrant traditions and the warmth of our big family. This season, we’re eager to share our festive cheer, Brazilian culture, and family spirit with someone special.",
-    "family_picture": "http://localhost:3000/uploads/eb43535d853a89c7b4f9e44c16ffc3fe",
+    "family_picture": "http://localhost:3000/uploads/691c99600b3de9ea5c42403da3e6f9aa",
     "family_properties": {
       "smokingAllowed": false,
       "petsAllowed": false,
@@ -251,7 +251,7 @@
     "family_name": "The Anderssons",
     "family_title": "The Winterbliss",
     "family_description": "We are a couple with two children, ages 5 and 9. Our home is full of energy, laughter, and the excitement of the holiday season. We love spending time together, decorating the Christmas tree, and playing winter games outside. We would be delighted to invite someone to join our family for a festive and warm Christmas celebration.",
-    "family_picture": "http://localhost:3000/uploads/bbb32952845a4f732d861a69d84d0558",
+    "family_picture": "http://localhost:3000/uploads/abc48b1ea7cf3637c3845247a74c12ab",
     "family_properties": {
       "smokingAllowed": true,
       "petsAllowed": true,
@@ -264,7 +264,7 @@
     "family_name": "The Kleins",
     "family_title": "The Winter Lovers",
     "family_description": "We are a couple with a 7-year-old daughter. Our family enjoys spending time together, from decorating the Christmas tree to baking festive treats. We love the winter season and the warmth of the holidays. We would be thrilled to invite someone to join us for a cozy and joyful Christmas celebration.",
-    "family_picture": "http://localhost:3000/uploads/25f26720cb4c26abb7862975f082e0fc",
+    "family_picture": "http://localhost:3000/uploads/682f316b274114e90da714ed68cdebf5",
     "family_properties": {
       "smokingAllowed": false,
       "petsAllowed": true,
