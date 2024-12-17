@@ -14,31 +14,6 @@ async function getFamilies() {
   }
 }
 
-function renderFilteredFamilies() {
-  const hasPet = document.querySelector('input[name="petsAllowed"]').checked;
-  const isSmoking = document.querySelector(
-    'input[name="smokingAllowed"]'
-  ).checked;
-  const isVegan = document.querySelector('input[name="veganFriendly"]').checked;
-  const wantsOvernightStay = document.querySelector(
-    'input[name="overnightStay"]'
-  ).checked;
-
-  const filteredFamilies = familiesArray.filter((family) => {
-    return (
-      (hasPet === false || family.family_properties.petsAllowed === hasPet) &&
-      (isSmoking === false ||
-        family.family_properties.smokingAllowed === isSmoking) &&
-      (isVegan === false ||
-        family.family_properties.veganFriendly === isVegan) &&
-      (wantsOvernightStay === false ||
-        family.family_properties.overnightStay === wantsOvernightStay)
-    );
-  });
-
-  displayFamilies(filteredFamilies);
-}
-
 function displayFamilies(families) {
   const familyInfoContainer = document.getElementById("family-info-container");
 
@@ -85,7 +60,7 @@ function displayFamilies(families) {
   }
 }
 
-document.addEventListener("click", function (event) {
+document.addEventListener("click", (event) => {
   if (event.target && event.target.classList.contains("view-details-btn")) {
     const familyId = event.target.closest("#family-info-container-small")
       .dataset.familyId;
@@ -124,10 +99,27 @@ function openFamilyDetails(familyId) {
     <img id="family-picture-dialog" src="${
       family.family_picture
     }" alt="family picture" />
+<div id="message-form">
+       
+<h2>Send a message directly to the family <h2>
+      <textarea id="message" placeholder="Write your message here..." required></textarea>
+      <button type="submit" id="send-message-btn">Send Message</button> 
+ <input id="date-dialog" type="date" />
+    <button id="book-btn" >Book here</button>
+     
+</div>
     <button id="close-dialog-btn" class="close-dialog-btn">Close</button>
   `;
   document.body.appendChild(dialog);
   dialog.showModal();
+
+  document
+    .getElementById("send-message-btn")
+    .addEventListener("click", function () {
+      const messageField = document.getElementById("message");
+
+      messageField.value = "";
+    });
 
   dialog.querySelector(".close-dialog-btn").addEventListener("click", () => {
     dialog.close();
@@ -140,11 +132,72 @@ function openFamilyDetails(familyId) {
   });
 }
 
-document
-  .getElementById("search-btn")
-  .addEventListener("click", function (event) {
-    event.preventDefault();
-    renderFilteredFamilies();
+document.getElementById("search-btn").addEventListener("click", (event) => {
+  event.preventDefault();
+  filteredFamilies(filterParams);
+});
+
+let filterParams = {};
+
+const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+
+checkboxes.forEach((checkbox) => {
+  let name = checkbox.name;
+  filterParams[name] = checkbox.checked;
+
+  checkbox.addEventListener("change", () => {
+    filterParams[name] = checkbox.checked;
+  });
+});
+
+function getQueryparamsFromFilter(object) {
+  let params = [];
+  Object.entries(object).forEach(([key, value]) => {
+    if (value === true) {
+      params.push(key);
+    }
   });
 
-getFamilies();
+  return params.length > 0 ? params.join("&") : "";
+}
+
+const searchArea = document.getElementById("search");
+let searchValue = "";
+
+searchArea.addEventListener("keyup", (e) => {
+  if (e.key === "Enter") {
+    filteredFamilies(filterParams);
+  }
+  searchValue = e.target.value.toLowerCase();
+});
+
+function returnSearchParams(searchValue, filterParams) {
+  const searchParamString = getQueryparamsFromFilter(filterParams);
+  let queryString = "";
+
+  if (searchValue && searchParamString) {
+    queryString = `value=${searchValue}&${searchParamString}`;
+  } else if (searchValue) {
+    queryString = `value=${searchValue}`;
+  } else if (searchParamString) {
+    queryString = searchParamString;
+  }
+
+  return queryString;
+}
+
+async function filteredFamilies() {
+  const search = returnSearchParams(searchValue, filterParams);
+
+  try {
+    const request = await fetch(`http://localhost:3000/families?${search}`);
+    const response = await request.json();
+    const familiesArray = response;
+    displayFamilies(familiesArray);
+    console.log(familiesArray);
+  } catch (error) {
+    console.error("There was an error:", error);
+  }
+}
+
+window.onload = getFamilies;

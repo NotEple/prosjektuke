@@ -123,18 +123,38 @@ async function getFamilyById(id) {
 editForm.addEventListener("submit", (e) => {
   e.preventDefault();
 
-  const newFamilyObject = {
-    family_id: familyId,
-    family_name: document.getElementById("family_name").value,
-    family_title: document.getElementById("family_title").value,
-    family_description: document.getElementById("family_description").value,
-    family_picture:
-      document.getElementById("family_picture").value ||
-      "https://thispersondoesnotexist.com/",
-    family_properties: editFamilyProperties,
-  };
+  const formData = new FormData();
 
-  editFamily(newFamilyObject);
+  formData.append("family_id", familyId);
+  formData.append("family_name", document.getElementById("family_name").value);
+  formData.append(
+    "family_title",
+    document.getElementById("family_title").value
+  );
+  formData.append(
+    "family_description",
+    document.getElementById("family_description").value
+  );
+
+  if (
+    document.getElementById("family_picture").files &&
+    document.getElementById("family_picture").files[0]
+  ) {
+    formData.append(
+      "family_picture",
+      document.getElementById("family_picture").files[0]
+    );
+  } else {
+    formData.append(
+      "family_picture",
+      document.getElementById("family_picture_url").src
+    );
+  }
+
+  formData.append("family_properties", JSON.stringify(editFamilyProperties));
+
+  editFamily(formData);
+  editForm.reset();
 });
 
 // ?
@@ -142,13 +162,16 @@ async function editFamilyById(id) {
   familyId = id;
   const family = await getFamilyById(id);
 
+  const familyPicture = document.getElementById("family_picture_url");
+  familyPicture.src = family.family_picture;
+
   editFamilyDialog.showModal();
 
   document.getElementById("family_name").value = family.family_name;
   document.getElementById("family_title").value = family.family_title;
   document.getElementById("family_description").value =
     family.family_description;
-  document.getElementById("family_picture").value = family.family_picture;
+  document.getElementById("family_picture").filename = family.family_picture;
 
   const checkboxes = document.querySelectorAll(".edit-family-properties");
 
@@ -167,17 +190,12 @@ async function editFamilyById(id) {
 
 // ? Send a PUT request to the API
 async function editFamily(body) {
+  const id = body.get("family_id");
   try {
-    const request = await fetch(
-      `http://localhost:3000/families/${body.family_id}`,
-      {
-        method: "PUT",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(body),
-      }
-    );
+    const request = await fetch(`http://localhost:3000/families/${id}`, {
+      method: "PUT",
+      body: body,
+    });
     const response = await request.json();
 
     console.log(response);
@@ -187,6 +205,7 @@ async function editFamily(body) {
     }
     console.log("Family updated successfully!");
 
+    getFamilies();
     editFamilyDialog.close();
   } catch (error) {
     console.log("Error updating family:", error);
