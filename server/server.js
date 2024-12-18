@@ -110,37 +110,42 @@ app.put("/families/:id", upload.single("family_picture"), (req, res) => {
     (family) => family.family_id === familyId
   );
 
-  const filename = families[familyIndex].family_picture.replace(
-    "http://localhost:3000/uploads/",
-    ""
-  );
+  if (familyIndex === -1) {
+    return res.status(404).json({ message: "Family not found" });
+  }
 
+  const oldPicture = families[familyIndex].family_picture;
+
+  // Check if a file is uploaded and if the old picture is not the placeholder
   if (file) {
-    if (file.filename !== families[familyIndex].family_picture) {
-      console.log(`Deleting old image:${filename}`);
-      fs.unlinkSync(__dirname + "/server/uploads/" + filename);
+    if (oldPicture.startsWith("http://localhost:3000/uploads/")) {
+      const filename = oldPicture.replace("http://localhost:3000/uploads/", "");
+
+      try {
+        console.log(`Deleting old image: ${filename}`);
+        fs.unlinkSync(__dirname + "/server/uploads/" + filename);
+      } catch (error) {
+        console.error(`Error deleting file: ${error.message}`);
+      }
     }
   }
 
+  // Create the updated family object
   const editedFamilyObj = {
-    family_id: currentId,
+    family_id: familyId,
     family_name: body.family_name,
     family_title: body.family_title,
     family_description: body.family_description,
     family_picture: file
       ? `http://localhost:3000/uploads/${file.filename}`
-      : req.body.family_picture,
+      : oldPicture, // Keep the old picture if no new file is uploaded
     family_properties: JSON.parse(body.family_properties),
   };
 
-  if (familyIndex === -1) {
-    res.status(404).json({ message: "Family not found" });
-  }
-
+  // Update the family record
   families[familyIndex] = {
     ...families[familyIndex],
     ...editedFamilyObj,
-    family_id: familyId,
   };
 
   saveFamilies(families);
@@ -151,21 +156,36 @@ app.put("/families/:id", upload.single("family_picture"), (req, res) => {
 // ? DELETE REQUEST - Delete a family by id
 app.delete("/families/:id", (req, res) => {
   let families = loadFamilies();
-  if (req.params.id) {
-    const deleteFamily = (families = families.filter(
-      (del) => del.family_id !== Number(req.params.id)
-    ));
 
-    fs.unlinkSync(
-      __dirname +
-        "/server/uploads/" +
-        families[req.params.id].family_picture.replace(
-          "http://localhost:3000/uploads/",
-          ""
-        )
+  const familyId = Number(req.params.id);
+
+  const familyIndex = families.findIndex(
+    (family) => family.family_id === familyId
+  );
+
+  if (familyIndex !== -1) {
+    const familyPicture = families[familyIndex].family_picture;
+
+    if (familyPicture.startsWith("http://localhost:3000/uploads/")) {
+      const filename = familyPicture.replace(
+        "http://localhost:3000/uploads/",
+        ""
+      );
+
+      try {
+        fs.unlinkSync(__dirname + "/server/uploads/" + filename);
+      } catch (error) {
+        console.error(`Error deleting file: ${error.message}`);
+      }
+    }
+
+    const updatedFamilies = families.filter(
+      (family) => family.family_id !== familyId
     );
 
-    saveFamilies(deleteFamily);
+    saveFamilies(updatedFamilies);
     res.status(200).sendStatus(200);
+  } else {
+    res.status(404).json({ error: "Family not found" });
   }
 });
