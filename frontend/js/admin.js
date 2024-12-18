@@ -53,6 +53,7 @@ async function newFamily(body) {
       method: "POST",
       body: body,
     });
+    getFamilies();
   } catch (error) {
     console.log(error);
   }
@@ -154,7 +155,6 @@ editForm.addEventListener("submit", (e) => {
   formData.append("family_properties", JSON.stringify(editFamilyProperties));
 
   editFamily(formData);
-  editForm.reset();
 });
 
 // ?
@@ -206,6 +206,7 @@ async function editFamily(body) {
     console.log("Family updated successfully!");
 
     getFamilies();
+    editForm.reset();
     editFamilyDialog.close();
   } catch (error) {
     console.log("Error updating family:", error);
